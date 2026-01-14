@@ -416,15 +416,111 @@ Proof.
   - simpl. rewrite element_eq_refl. exact IH.
 Qed.
 
+(** Combined lemma for both weaken and drop_head *)
+Lemma subseq_aux : forall n,
+  (* weaken: s1 ⊆ s2 → s1 ⊆ x::s2 *)
+  (forall s1 s2 x, length s1 + length s2 <= n ->
+    is_subsequence s1 s2 = true -> is_subsequence s1 (x :: s2) = true) /\
+  (* drop_head: x::xs ⊆ s → xs ⊆ s *)
+  (forall x xs s, length xs + length s <= n ->
+    is_subsequence (x :: xs) s = true -> is_subsequence xs s = true).
+Proof.
+  induction n as [| n [IHweak IHdrop]].
+  - split.
+    + intros s1 s2 x Hlen H.
+      destruct s1 as [|a s1']; [reflexivity|].
+      destruct s2 as [|b s2']; simpl in Hlen; lia.
+    + intros x xs s Hlen H.
+      destruct xs as [|a xs'].
+      * destruct s; reflexivity.
+      * destruct s as [|b s']; [simpl in H; discriminate|].
+        simpl in Hlen. lia.
+  - split.
+    + (* weaken *)
+      intros s1 s2 x Hlen H.
+      destruct s1 as [| z zs]; [reflexivity|].
+      destruct s2 as [| y ys]; [simpl in H; discriminate|].
+      simpl in H. simpl.
+      destruct (element_eq z x) eqn:Ezx.
+      * destruct (element_eq z y) eqn:Ezy.
+        -- apply IHweak. simpl in Hlen. simpl. lia. exact H.
+        -- apply IHweak. simpl in Hlen. simpl. lia.
+           apply IHdrop with (x := z). simpl in Hlen. simpl. lia. exact H.
+      * destruct (element_eq z y) eqn:Ezy.
+        -- exact H.
+        -- exact H.
+    + (* drop_head *)
+      intros x xs s Hlen H.
+      destruct s as [| y ys]; [simpl in H; discriminate|].
+      simpl in H.
+      destruct (element_eq x y) eqn:Exy.
+      * apply IHweak. simpl in Hlen. lia. exact H.
+      * apply IHweak. simpl in Hlen. lia.
+        apply IHdrop with (x := x). simpl in Hlen. lia. exact H.
+Qed.
+
+Lemma subsequence_weaken : forall s1 s2 x,
+  is_subsequence s1 s2 = true ->
+  is_subsequence s1 (x :: s2) = true.
+Proof.
+  intros s1 s2 x H.
+  destruct (subseq_aux (length s1 + length s2)) as [Hweak _].
+  apply Hweak. lia. exact H.
+Qed.
+
+Lemma subsequence_drop_head : forall x xs s,
+  is_subsequence (x :: xs) s = true ->
+  is_subsequence xs s = true.
+Proof.
+  intros x xs s H.
+  destruct (subseq_aux (length xs + length s)) as [_ Hdrop].
+  apply Hdrop with (x := x). lia. exact H.
+Qed.
+
 (** Subsequence is transitive *)
 Lemma subsequence_trans : forall s1 s2 s3,
   is_subsequence s1 s2 = true ->
   is_subsequence s2 s3 = true ->
   is_subsequence s1 s3 = true.
 Proof.
-  (* Complex - admit for now, but provable *)
-  intros s1 s2 s3 H12 H23.
-Admitted.
+  intros s1 s2 s3. revert s1 s2.
+  induction s3 as [| z zs IH]; intros s1 s2 H12 H23.
+  - (* s3 = [] *)
+    destruct s2 as [|y ys]; [|simpl in H23; discriminate].
+    destruct s1 as [|x xs]; [reflexivity|simpl in H12; discriminate].
+  - (* s3 = z :: zs *)
+    destruct s1 as [| x xs]; [reflexivity|].
+    destruct s2 as [| y ys]; [simpl in H12; discriminate|].
+    simpl in H12. simpl in H23. simpl.
+    destruct (element_eq x z) eqn:Exz;
+    destruct (element_eq x y) eqn:Exy;
+    destruct (element_eq y z) eqn:Eyz.
+    + (* x=z, x=y, y=z *) apply IH with (s2 := ys). exact H12. exact H23.
+    + (* x=z, x=y, y≠z *) apply IH with (s2 := ys). exact H12.
+      apply subsequence_drop_head with (x := y). exact H23.
+    + (* x=z, x≠y, y=z *) apply IH with (s2 := ys).
+      apply subsequence_drop_head with (x := x). exact H12. exact H23.
+    + (* x=z, x≠y, y≠z *) apply IH with (s2 := ys).
+      apply subsequence_drop_head with (x := x). exact H12.
+      apply subsequence_drop_head with (x := y). exact H23.
+    + (* x≠z, x=y, y=z - contradiction: x=y, y=z implies x=z *)
+      exfalso. unfold element_eq, glyph_eq in *.
+      destruct x, y, z; simpl in *; try discriminate.
+      * apply Nat.eqb_eq in Exy. apply Nat.eqb_eq in Eyz.
+        apply Nat.eqb_neq in Exz. lia.
+      * rewrite andb_true_iff in Exy, Eyz.
+        rewrite andb_false_iff in Exz.
+        destruct Exy as [Exy1 Exy2]. destruct Eyz as [Eyz1 Eyz2].
+        apply Nat.eqb_eq in Exy1. apply Nat.eqb_eq in Exy2.
+        apply Nat.eqb_eq in Eyz1. apply Nat.eqb_eq in Eyz2.
+        destruct Exz as [Exz1 | Exz2];
+          apply Nat.eqb_neq in Exz1 + apply Nat.eqb_neq in Exz2; lia.
+    + (* x≠z, x=y, y≠z *) apply IH with (s2 := y :: ys).
+      simpl. rewrite Exy. exact H12. exact H23.
+    + (* x≠z, x≠y, y=z *) apply IH with (s2 := ys). exact H12. exact H23.
+    + (* x≠z, x≠y, y≠z *) apply IH with (s2 := y :: ys).
+      apply subsequence_weaken. exact H12. exact H23.
+Qed.
 
 (** Parallel passages are symmetric *)
 Lemma shares_passage_sym : forall t1 t2 p,
