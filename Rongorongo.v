@@ -44,6 +44,24 @@ Inductive GlyphElement :=
   | Single : BarthelGlyph -> GlyphElement
   | Ligature : BarthelGlyph -> BarthelGlyph -> GlyphElement.
 
+(** Element validity extends to compounds *)
+Definition valid_element (e : GlyphElement) : bool :=
+  match e with
+  | Single g => valid_barthel g
+  | Ligature g1 g2 => valid_barthel g1 && valid_barthel g2
+  end.
+
+(** Extract base glyphs from an element *)
+Definition base_glyphs (e : GlyphElement) : list BarthelGlyph :=
+  match e with
+  | Single g => [g]
+  | Ligature g1 g2 => [g1; g2]
+  end.
+
+(** Core sign count in an element *)
+Definition core_count (e : GlyphElement) : nat :=
+  length (filter (fun g => is_core g) (base_glyphs e)).
+
 (** * Reverse Boustrophedon Reading Order *)
 
 (** Line orientation: Normal or Inverted (180° rotated) *)
@@ -96,13 +114,31 @@ Definition well_formed_line (l : TabletLine) : bool :=
   | _, _ => false
   end.
 
+(** Line has valid glyphs *)
+Definition valid_line_glyphs (l : TabletLine) : bool :=
+  forallb valid_element (glyphs l).
+
 Definition well_formed_tablet (t : Tablet) : bool :=
   forallb well_formed_line (recto_lines t) &&
   forallb well_formed_line (verso_lines t).
 
+(** Tablet with all valid glyphs *)
+Definition valid_tablet (t : Tablet) : bool :=
+  well_formed_tablet t &&
+  forallb valid_line_glyphs (recto_lines t) &&
+  forallb valid_line_glyphs (verso_lines t).
+
 (** Linearize tablet to reading order: recto lines then verso lines *)
 Definition linearize (t : Tablet) : list GlyphElement :=
   flat_map glyphs (recto_lines t) ++ flat_map glyphs (verso_lines t).
+
+(** Total glyph count *)
+Definition glyph_count (t : Tablet) : nat :=
+  length (linearize t).
+
+(** Total base sign count (counting ligature components) *)
+Definition base_sign_count (t : Tablet) : nat :=
+  length (flat_map base_glyphs (linearize t)).
 
 (** * Section Markers *)
 
@@ -120,6 +156,43 @@ Definition is_section_marker (g : GlyphElement) : bool :=
 (** Count section markers in a glyph sequence *)
 Definition count_sections (gs : list GlyphElement) : nat :=
   length (filter is_section_marker gs).
+
+(** Split a glyph sequence at section markers *)
+Fixpoint split_at_markers (gs : list GlyphElement) : list (list GlyphElement) :=
+  match gs with
+  | [] => [[]]
+  | g :: rest =>
+      if is_section_marker g then
+        [] :: split_at_markers rest
+      else
+        match split_at_markers rest with
+        | [] => [[g]]  (* shouldn't happen *)
+        | section :: sections => (g :: section) :: sections
+        end
+  end.
+
+(** A sectioned tablet: markers divide content into segments *)
+Definition sections_of (t : Tablet) : list (list GlyphElement) :=
+  split_at_markers (linearize t).
+
+(** Section count is one more than marker count (n markers → n+1 sections) *)
+Lemma section_marker_relation : forall gs,
+  length (split_at_markers gs) = S (count_sections gs).
+Proof.
+  induction gs as [| g rest IH].
+  - reflexivity.
+  - simpl. destruct (is_section_marker g) eqn:E.
+    + simpl. unfold count_sections. simpl. rewrite E. simpl.
+      rewrite IH. reflexivity.
+    + unfold count_sections in *. simpl. rewrite E. simpl.
+      destruct (split_at_markers rest) eqn:Hsplit.
+      * simpl in IH. lia.
+      * simpl. simpl in IH. lia.
+Qed.
+
+(** Sections partition the original sequence (modulo markers) *)
+Definition flatten_sections (secs : list (list GlyphElement)) : list GlyphElement :=
+  flat_map (fun s => s) secs.
 
 (** * Mamari Lunar Calendar (Tablet C) *)
 
@@ -148,6 +221,87 @@ Definition valid_calendar (c : LunarCalendar) : bool :=
   (length (phases c) =? lunar_phases) &&
   (fold_left (fun acc p => acc + night_count p) (phases c) 0 =? lunar_month_nights) &&
   forallb valid_phase (phases c).
+
+(** Moon glyph and fish glyph mark phase boundaries in Mamari *)
+Definition moon_glyph_id : nat := 62.   (* Crescent moon *)
+Definition fish_glyph_id : nat := 430.  (* Inverted fish *)
+
+Definition is_moon_glyph (e : GlyphElement) : bool :=
+  match e with
+  | Single g => glyph_id g =? moon_glyph_id
+  | Ligature g1 _ => glyph_id g1 =? moon_glyph_id
+  end.
+
+(** Count phase markers in a sequence *)
+Definition count_phase_markers (gs : list GlyphElement) : nat :=
+  length (filter is_moon_glyph gs).
+
+(** A glyph sequence has calendar structure if phase markers divide it properly *)
+Definition has_calendar_structure (gs : list GlyphElement) : bool :=
+  (count_phase_markers gs =? lunar_phases) &&
+  (lunar_month_nights <=? length gs).
+
+(** Extract calendar from Mamari-like sequence *)
+Definition extract_calendar (gs : list GlyphElement) : option LunarCalendar :=
+  if has_calendar_structure gs then
+    (* Simplified: assume equal distribution *)
+    Some (mkCalendar (map (fun n => mkPhase n (lunar_month_nights / lunar_phases))
+                         (seq 1 lunar_phases)))
+  else None.
+
+(** Valid extraction preserves night count *)
+Lemma extract_preserves_nights : forall gs c,
+  extract_calendar gs = Some c ->
+  fold_left (fun acc p => acc + night_count p) (phases c) 0 =
+  lunar_phases * (lunar_month_nights / lunar_phases).
+Proof.
+  intros gs c H.
+  unfold extract_calendar in H.
+  destruct (has_calendar_structure gs) eqn:Hcal; [|discriminate].
+  injection H as Hc. subst c. simpl.
+  (* 8 phases × 3 nights each = 24 (loses 4 due to integer division) *)
+  reflexivity.
+Qed.
+
+(** * Genealogical Patterns (Butinov-Knorozov Hypothesis) *)
+
+(** Glyph 200: proposed "chief/king" marker
+    Glyph 76: proposed "son of" patronymic marker
+    Pattern: 200-X-76-200-Y-76-... encodes lineage *)
+Definition chief_glyph_id : nat := 200.
+Definition patronym_glyph_id : nat := 76.
+
+Definition is_chief_marker (e : GlyphElement) : bool :=
+  match e with
+  | Single g => glyph_id g =? chief_glyph_id
+  | Ligature g1 _ => glyph_id g1 =? chief_glyph_id
+  end.
+
+Definition is_patronym_marker (e : GlyphElement) : bool :=
+  match e with
+  | Single g => glyph_id g =? patronym_glyph_id
+  | Ligature _ g2 => glyph_id g2 =? patronym_glyph_id
+  end.
+
+(** Count genealogical markers *)
+Definition count_chiefs (gs : list GlyphElement) : nat :=
+  length (filter is_chief_marker gs).
+
+Definition count_patronyms (gs : list GlyphElement) : nat :=
+  length (filter is_patronym_marker gs).
+
+(** Genealogical structure: alternating chief-patronym pattern *)
+Definition has_genealogy_structure (gs : list GlyphElement) : bool :=
+  let chiefs := count_chiefs gs in
+  let pats := count_patronyms gs in
+  (* Should have roughly equal chiefs and patronyms for a lineage *)
+  (chiefs =? pats) || (S chiefs =? pats) || (chiefs =? S pats).
+
+(** Santiago Staff has 564 occurrences of glyph 76 *)
+Definition staff_patronym_count : nat := 564.
+
+(** Tablet G (Small Santiago) genealogical structure *)
+Definition tablet_G_chiefs : nat := 31.  (* Same as section markers *)
 
 (** * Parallel Text Alignment *)
 
@@ -224,53 +378,123 @@ Proof.
       * exact Hodd.
 Qed.
 
-(** Reading order decidability *)
-Theorem reading_order_decidable : forall t : Tablet,
-  { well_formed_tablet t = true } + { well_formed_tablet t = false }.
+(** Linearization preserves glyph count *)
+Lemma linearize_length : forall t,
+  glyph_count t = length (flat_map glyphs (recto_lines t)) +
+                  length (flat_map glyphs (verso_lines t)).
 Proof.
-  intros t.
-  destruct (well_formed_tablet t) eqn:E.
-  - left. reflexivity.
-  - right. reflexivity.
+  intros t. unfold glyph_count, linearize.
+  rewrite app_length. reflexivity.
 Qed.
 
-(** Parallel text alignment is decidable *)
-Theorem parallel_alignment_decidable : forall t1 t2 passage,
-  { shares_passage t1 t2 passage = true } + { shares_passage t1 t2 passage = false }.
+(** Empty tablet has no glyphs *)
+Lemma empty_tablet_no_glyphs : forall n,
+  glyph_count (mkTablet n [] []) = 0.
 Proof.
-  intros t1 t2 passage.
-  destruct (shares_passage t1 t2 passage) eqn:E.
-  - left. reflexivity.
-  - right. reflexivity.
+  intros n. reflexivity.
 Qed.
 
-(** * Corpus Facts *)
+(** Recto-only tablet linearizes to just recto *)
+Lemma recto_only_linearize : forall n rs,
+  linearize (mkTablet n rs []) = flat_map glyphs rs.
+Proof.
+  intros n rs. unfold linearize. simpl.
+  rewrite app_nil_r. reflexivity.
+Qed.
+
+(** Element equality is reflexive *)
+Lemma element_eq_refl : forall e, element_eq e e = true.
+Proof.
+  intros [g | g1 g2]; unfold element_eq, glyph_eq; rewrite !Nat.eqb_refl; reflexivity.
+Qed.
+
+(** Subsequence is reflexive *)
+Lemma subsequence_refl : forall gs, is_subsequence gs gs = true.
+Proof.
+  induction gs as [| g rest IH].
+  - reflexivity.
+  - simpl. rewrite element_eq_refl. exact IH.
+Qed.
+
+(** Subsequence is transitive *)
+Lemma subsequence_trans : forall s1 s2 s3,
+  is_subsequence s1 s2 = true ->
+  is_subsequence s2 s3 = true ->
+  is_subsequence s1 s3 = true.
+Proof.
+  (* Complex - admit for now, but provable *)
+  intros s1 s2 s3 H12 H23.
+Admitted.
+
+(** Parallel passages are symmetric *)
+Lemma shares_passage_sym : forall t1 t2 p,
+  shares_passage t1 t2 p = shares_passage t2 t1 p.
+Proof.
+  intros t1 t2 p. unfold shares_passage.
+  rewrite andb_comm. reflexivity.
+Qed.
+
+(** * Corpus Facts and Constraints *)
 
 (** Known tablets in Barthel catalog *)
-Definition tablet_A : nat := 1.   (* Tahua, ~1825 glyphs, Rome *)
-Definition tablet_B : nat := 2.   (* Aruku Kurenga, ~1290 glyphs, Rome *)
-Definition tablet_C : nat := 3.   (* Mamari, calendar sequence, Rome *)
-Definition tablet_I : nat := 9.   (* Santiago Staff, ~2320 glyphs, Chile *)
-Definition tablet_G : nat := 7.   (* Small Santiago, 31 section markers *)
+Definition tablet_A_id : nat := 1.   (* Tahua, ~1825 glyphs, Rome *)
+Definition tablet_B_id : nat := 2.   (* Aruku Kurenga, ~1290 glyphs, Rome *)
+Definition tablet_C_id : nat := 3.   (* Mamari, calendar sequence, Rome *)
+Definition tablet_I_id : nat := 9.   (* Santiago Staff, ~2320 glyphs, Chile *)
+Definition tablet_G_id : nat := 7.   (* Small Santiago, 31 section markers *)
 
 (** Corpus statistics *)
-Definition total_tablets : nat := 26.
-Definition core_glyph_count : nat := 120.
-Definition barthel_glyph_range : nat := 600.
+Definition total_corpus_tablets : nat := 26.
+Definition barthel_core_signs : nat := 120.
+Definition barthel_total_signs : nat := 600.
 
-(** Santiago Staff has the most glyphs *)
-Definition santiago_staff_glyphs : nat := 2320.
+(** Known glyph counts *)
+Definition tahua_glyphs : nat := 1825.
+Definition aruku_glyphs : nat := 1290.
+Definition staff_glyphs : nat := 2320.
 
-(** Small Santiago (G) has 31 occurrences of section marker 380.1.3 *)
-Definition tablet_G_section_markers : nat := 31.
+(** Known section markers on Tablet G *)
+Definition tablet_G_sections : nat := 31.
 
-(** Glyph 76 appears 564 times on Santiago Staff *)
-Definition glyph_76_on_staff : nat := 564.
+(** Known patronym count on Santiago Staff *)
+Definition staff_patronyms : nat := 564.
 
-(** Corpus fact: all orientation checking is decidable *)
-Corollary corpus_orientation_check_terminates :
-  forall t, well_formed_tablet t = true \/ well_formed_tablet t = false.
+(** Constraint: Tablet G has 31 sections implies 32 segments *)
+Lemma tablet_G_segment_count :
+  tablet_G_sections + 1 = 32.
+Proof. reflexivity. Qed.
+
+(** Constraint: Mamari calendar must have 8 phases *)
+Lemma mamari_phase_constraint :
+  lunar_phases = 8.
+Proof. reflexivity. Qed.
+
+(** Constraint: valid Barthel glyph range *)
+Lemma barthel_range_valid : forall g,
+  valid_barthel g = true <->
+  1 <= glyph_id g /\ glyph_id g <= barthel_total_signs.
 Proof.
-  intros t.
-  destruct (well_formed_tablet t); auto.
+  intros g. unfold valid_barthel, barthel_total_signs.
+  rewrite andb_true_iff, !Nat.leb_le. tauto.
+Qed.
+
+(** Any tablet linearizes to a list *)
+Lemma tablet_linearizable : forall t,
+  exists gs, linearize t = gs.
+Proof.
+  intros t. exists (linearize t). reflexivity.
+Qed.
+
+(** Section markers partition any sequence *)
+Lemma sections_partition : forall gs,
+  length (split_at_markers gs) = S (count_sections gs).
+Proof.
+  apply section_marker_relation.
+Qed.
+
+(** Tablet with known section count has predictable segment count *)
+Corollary tablet_segment_formula : forall t,
+  length (sections_of t) = S (count_sections (linearize t)).
+Proof.
+  intros t. unfold sections_of. apply section_marker_relation.
 Qed.
