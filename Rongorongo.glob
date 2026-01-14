@@ -1,1003 +1,1003 @@
-DIGEST c80ee17bbe41dd4c49a1b338ec0d8e44
+DIGEST a4fccbfe8f6486826f16ebd5e8c8ede3
 FRongorongo
-R1722:1736 Coq.Arith.Arith <> <> lib
-R1754:1767 Coq.Lists.List <> <> lib
-R1785:1797 Coq.Bool.Bool <> <> lib
-R1815:1817 Coq.micromega.Lia <> <> lib
-R1835:1850 Coq.Arith.Wf_nat <> <> lib
-R1860:1872 Coq.Lists.List ListNotations <> mod
-rec 2036:2047 <> BarthelGlyph
-proj 2064:2071 <> glyph_id
-proj 2104:2110 <> is_core
-R2075:2077 Coq.Init.Datatypes <> nat ind
-R2114:2117 Coq.Init.Datatypes <> bool ind
-def 2173:2185 <> valid_barthel
-R2192:2203 Rongorongo <> BarthelGlyph rec
-binder 2188:2188 <> g:4
-R2208:2211 Coq.Init.Datatypes <> bool ind
-R2218:2218 Coq.Init.Datatypes <> ::bool_scope:x_'&&'_x not
-R2235:2240 Coq.Init.Datatypes <> ::bool_scope:x_'&&'_x not
-R2259:2259 Coq.Init.Datatypes <> ::bool_scope:x_'&&'_x not
-R2220:2224 Coq.Arith.PeanoNat <> ::nat_scope:x_'<=?'_x not
-R2225:2232 Rongorongo <> glyph_id proj
-R2234:2234 Rongorongo <> g:4 var
-R2251:2255 Coq.Arith.PeanoNat <> ::nat_scope:x_'<=?'_x not
-R2241:2248 Rongorongo <> glyph_id proj
-R2250:2250 Rongorongo <> g:4 var
-ind 2321:2332 <> GlyphElement
-constr 2341:2346 <> Single
-constr 2383:2390 <> Ligature
-R2362:2365 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R2350:2361 Rongorongo <> BarthelGlyph rec
-R2366:2377 Rongorongo <> GlyphElement:5 ind
-R2406:2409 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R2394:2405 Rongorongo <> BarthelGlyph rec
-R2422:2425 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R2410:2421 Rongorongo <> BarthelGlyph rec
-R2426:2437 Rongorongo <> GlyphElement:5 ind
-scheme 2321:2332 <> GlyphElement_rect
-scheme 2321:2332 <> GlyphElement_ind
-scheme 2321:2332 <> GlyphElement_rec
-scheme 2321:2332 <> GlyphElement_sind
-def 2497:2509 <> valid_element
-R2516:2527 Rongorongo <> GlyphElement ind
-binder 2512:2512 <> e:7
-R2532:2535 Coq.Init.Datatypes <> bool ind
-R2548:2548 Rongorongo <> e:7 var
-R2559:2564 Rongorongo <> Single constr
-R2571:2583 Rongorongo <> valid_barthel def
-R2591:2598 Rongorongo <> Ligature constr
-R2625:2628 Coq.Init.Datatypes <> ::bool_scope:x_'&&'_x not
-R2609:2621 Rongorongo <> valid_barthel def
-R2629:2641 Rongorongo <> valid_barthel def
-def 2708:2718 <> base_glyphs
-R2725:2736 Rongorongo <> GlyphElement ind
-binder 2721:2721 <> e:9
-R2741:2744 Coq.Init.Datatypes <> list ind
-R2746:2757 Rongorongo <> BarthelGlyph rec
-R2770:2770 Rongorongo <> e:9 var
-R2781:2786 Rongorongo <> Single constr
-R2793:2793 Coq.Lists.List ListNotations ::list_scope:'['_x_']' not
-R2795:2795 Coq.Lists.List ListNotations ::list_scope:'['_x_']' not
-R2801:2808 Rongorongo <> Ligature constr
-R2819:2819 Coq.Lists.List ListNotations ::list_scope:'['_x_';'_x_';'_'..'_';'_x_']' not
-R2822:2823 Coq.Lists.List ListNotations ::list_scope:'['_x_';'_x_';'_'..'_';'_x_']' not
-R2826:2826 Coq.Lists.List ListNotations ::list_scope:'['_x_';'_x_';'_'..'_';'_x_']' not
-def 2884:2893 <> core_count
-R2900:2911 Rongorongo <> GlyphElement ind
-binder 2896:2896 <> e:11
-R2916:2918 Coq.Init.Datatypes <> nat ind
-R2925:2930 Coq.Init.Datatypes <> length def
-R2933:2938 Coq.Lists.List <> filter def
-R2962:2972 Rongorongo <> base_glyphs def
-R2974:2974 Rongorongo <> e:11 var
-binder 2945:2945 <> g:12
-R2950:2956 Rongorongo <> is_core proj
-R2958:2958 Rongorongo <> g:12 var
-ind 3096:3106 <> Orientation
-constr 3111:3116 <> Normal
-constr 3120:3127 <> Inverted
-scheme 3096:3106 <> Orientation_rect
-scheme 3096:3106 <> Orientation_ind
-scheme 3096:3106 <> Orientation_rec
-scheme 3096:3106 <> Orientation_sind
-def 3166:3181 <> flip_orientation
-R3188:3198 Rongorongo <> Orientation ind
-binder 3184:3184 <> o:15
-R3203:3213 Rongorongo <> Orientation ind
-R3226:3226 Rongorongo <> o:15 var
-R3237:3242 Rongorongo <> Normal constr
-R3247:3254 Rongorongo <> Inverted constr
-R3260:3267 Rongorongo <> Inverted constr
-R3272:3277 Rongorongo <> Normal constr
-rec 3339:3348 <> TabletLine
-proj 3364:3371 <> line_num
-proj 3382:3392 <> orientation
-proj 3411:3416 <> glyphs
-R3375:3377 Coq.Init.Datatypes <> nat ind
-R3396:3406 Rongorongo <> Orientation ind
-R3420:3423 Coq.Init.Datatypes <> list ind
-R3425:3436 Rongorongo <> GlyphElement ind
-ind 3490:3493 <> Side
-constr 3498:3502 <> Recto
-constr 3506:3510 <> Verso
-scheme 3490:3493 <> Side_rect
-scheme 3490:3493 <> Side_ind
-scheme 3490:3493 <> Side_rec
-scheme 3490:3493 <> Side_sind
-rec 3553:3560 <> Position
-proj 3575:3582 <> pos_side
-proj 3594:3601 <> pos_line
-proj 3612:3618 <> pos_col
-R3586:3589 Rongorongo <> Side ind
-R3605:3607 Coq.Init.Datatypes <> nat ind
-R3622:3624 Coq.Init.Datatypes <> nat ind
-rec 3677:3682 <> Tablet
-proj 3700:3710 <> tablet_name
-proj 3777:3787 <> recto_lines
-proj 3810:3820 <> verso_lines
-R3714:3716 Coq.Init.Datatypes <> nat ind
-R3791:3794 Coq.Init.Datatypes <> list ind
-R3796:3805 Rongorongo <> TabletLine rec
-R3824:3827 Coq.Init.Datatypes <> list ind
-R3829:3838 Rongorongo <> TabletLine rec
-def 3925:3940 <> line_orientation
-R3947:3949 Coq.Init.Datatypes <> nat ind
-binder 3943:3943 <> n:31
-R3954:3964 Rongorongo <> Orientation ind
-R3977:3977 Rongorongo <> n:31 var
-R3988:3988 Coq.Init.Datatypes <> O constr
-R3993:3998 Rongorongo <> Normal constr
-R4004:4004 Coq.Init.Datatypes <> S constr
-R4012:4027 Rongorongo <> flip_orientation def
-R4030:4045 Rongorongo <> line_orientation:32 def
-def 4207:4222 <> well_formed_line
-R4229:4238 Rongorongo <> TabletLine rec
-binder 4225:4225 <> l:34
-R4243:4246 Coq.Init.Datatypes <> bool ind
-R4274:4289 Rongorongo <> line_orientation def
-R4292:4299 Rongorongo <> line_num proj
-R4301:4301 Rongorongo <> l:34 var
-R4259:4269 Rongorongo <> orientation proj
-R4271:4271 Rongorongo <> l:34 var
-R4313:4318 Rongorongo <> Normal constr
-R4321:4326 Rongorongo <> Normal constr
-R4331:4334 Coq.Init.Datatypes <> true constr
-R4340:4347 Rongorongo <> Inverted constr
-R4350:4357 Rongorongo <> Inverted constr
-R4362:4365 Coq.Init.Datatypes <> true constr
-R4379:4383 Coq.Init.Datatypes <> false constr
-def 4433:4449 <> valid_line_glyphs
-R4456:4465 Rongorongo <> TabletLine rec
-binder 4452:4452 <> l:35
-R4470:4473 Coq.Init.Datatypes <> bool ind
-R4480:4486 Coq.Lists.List <> forallb def
-R4503:4508 Rongorongo <> glyphs proj
-R4510:4510 Rongorongo <> l:35 var
-R4488:4500 Rongorongo <> valid_element def
-def 4526:4543 <> well_formed_tablet
-R4550:4555 Rongorongo <> Tablet rec
-binder 4546:4546 <> t:36
-R4560:4563 Coq.Init.Datatypes <> bool ind
-R4610:4615 Coq.Init.Datatypes <> ::bool_scope:x_'&&'_x not
-R4570:4576 Coq.Lists.List <> forallb def
-R4596:4606 Rongorongo <> recto_lines proj
-R4608:4608 Rongorongo <> t:36 var
-R4578:4593 Rongorongo <> well_formed_line def
-R4616:4622 Coq.Lists.List <> forallb def
-R4642:4652 Rongorongo <> verso_lines proj
-R4654:4654 Rongorongo <> t:36 var
-R4624:4639 Rongorongo <> well_formed_line def
-def 4706:4717 <> valid_tablet
-R4724:4729 Rongorongo <> Tablet rec
-binder 4720:4720 <> t:37
-R4734:4737 Coq.Init.Datatypes <> bool ind
-R4811:4816 Coq.Init.Datatypes <> ::bool_scope:x_'&&'_x not
-R4764:4769 Coq.Init.Datatypes <> ::bool_scope:x_'&&'_x not
-R4744:4761 Rongorongo <> well_formed_tablet def
-R4763:4763 Rongorongo <> t:37 var
-R4770:4776 Coq.Lists.List <> forallb def
-R4797:4807 Rongorongo <> recto_lines proj
-R4809:4809 Rongorongo <> t:37 var
-R4778:4794 Rongorongo <> valid_line_glyphs def
-R4817:4823 Coq.Lists.List <> forallb def
-R4844:4854 Rongorongo <> verso_lines proj
-R4856:4856 Rongorongo <> t:37 var
-R4825:4841 Rongorongo <> valid_line_glyphs def
-def 4943:4951 <> linearize
-R4958:4963 Rongorongo <> Tablet rec
-binder 4954:4954 <> t:38
-R4968:4971 Coq.Init.Datatypes <> list ind
-R4973:4984 Rongorongo <> GlyphElement ind
-R5022:5025 Coq.Init.Datatypes <> ::list_scope:x_'++'_x not
-R4991:4998 Coq.Lists.List <> flat_map def
-R5008:5018 Rongorongo <> recto_lines proj
-R5020:5020 Rongorongo <> t:38 var
-R5000:5005 Rongorongo <> glyphs proj
-R5026:5033 Coq.Lists.List <> flat_map def
-R5043:5053 Rongorongo <> verso_lines proj
-R5055:5055 Rongorongo <> t:38 var
-R5035:5040 Rongorongo <> glyphs proj
-def 5096:5106 <> glyph_count
-R5113:5118 Rongorongo <> Tablet rec
-binder 5109:5109 <> t:39
-R5123:5125 Coq.Init.Datatypes <> nat ind
-R5132:5137 Coq.Init.Datatypes <> length def
-R5140:5148 Rongorongo <> linearize def
-R5150:5150 Rongorongo <> t:39 var
-def 5226:5240 <> base_sign_count
-R5247:5252 Rongorongo <> Tablet rec
-binder 5243:5243 <> t:40
-R5257:5259 Coq.Init.Datatypes <> nat ind
-R5266:5271 Coq.Init.Datatypes <> length def
-R5274:5281 Coq.Lists.List <> flat_map def
-R5296:5304 Rongorongo <> linearize def
-R5306:5306 Rongorongo <> t:40 var
-R5283:5293 Rongorongo <> base_glyphs def
-def 5490:5503 <> section_marker
-R5507:5518 Rongorongo <> GlyphElement ind
-R5525:5532 Rongorongo <> Ligature constr
-R5535:5541 Rongorongo <> mkGlyph constr
-R5547:5551 Coq.Init.Datatypes <> false constr
-R5555:5561 Rongorongo <> mkGlyph constr
-R5565:5568 Coq.Init.Datatypes <> true constr
-def 5584:5600 <> is_section_marker
-R5607:5618 Rongorongo <> GlyphElement ind
-binder 5603:5603 <> g:41
-R5623:5626 Coq.Init.Datatypes <> bool ind
-R5639:5639 Rongorongo <> g:41 var
-R5650:5657 Rongorongo <> Ligature constr
-R5668:5668 Coq.Init.Datatypes <> ::bool_scope:x_'&&'_x not
-R5687:5692 Coq.Init.Datatypes <> ::bool_scope:x_'&&'_x not
-R5709:5709 Coq.Init.Datatypes <> ::bool_scope:x_'&&'_x not
-R5680:5683 Coq.Arith.PeanoNat <> ::nat_scope:x_'=?'_x not
-R5669:5676 Rongorongo <> glyph_id proj
-R5704:5707 Coq.Arith.PeanoNat <> ::nat_scope:x_'=?'_x not
-R5693:5700 Rongorongo <> glyph_id proj
-R5720:5724 Coq.Init.Datatypes <> false constr
-def 5794:5807 <> count_sections
-R5815:5818 Coq.Init.Datatypes <> list ind
-R5820:5831 Rongorongo <> GlyphElement ind
-binder 5810:5811 <> gs:43
-R5836:5838 Coq.Init.Datatypes <> nat ind
-R5845:5850 Coq.Init.Datatypes <> length def
-R5853:5858 Coq.Lists.List <> filter def
-R5878:5879 Rongorongo <> gs:43 var
-R5860:5876 Rongorongo <> is_section_marker def
-def 5942:5957 <> split_at_markers
-R5965:5968 Coq.Init.Datatypes <> list ind
-R5970:5981 Rongorongo <> GlyphElement ind
-binder 5960:5961 <> gs:44
-R5986:5989 Coq.Init.Datatypes <> list ind
-R5992:5995 Coq.Init.Datatypes <> list ind
-R5997:6008 Rongorongo <> GlyphElement ind
-R6022:6023 Rongorongo <> gs:44 var
-R6034:6035 Coq.Lists.List ListNotations ::list_scope:'['_']' not
-R6040:6040 Coq.Lists.List ListNotations ::list_scope:'['_x_']' not
-R6043:6043 Coq.Lists.List ListNotations ::list_scope:'['_x_']' not
-R6041:6042 Coq.Lists.List ListNotations ::list_scope:'['_']' not
-R6050:6053 Coq.Init.Datatypes <> ::list_scope:x_'::'_x not
-R6071:6087 Rongorongo <> is_section_marker def
-R6157:6172 Rongorongo <> split_at_markers:45 def
-R6194:6195 Coq.Lists.List ListNotations ::list_scope:'['_']' not
-R6200:6200 Coq.Lists.List ListNotations ::list_scope:'['_x_']' not
-R6204:6204 Coq.Lists.List ListNotations ::list_scope:'['_x_']' not
-R6201:6201 Coq.Lists.List ListNotations ::list_scope:'['_x_']' not
-R6203:6203 Coq.Lists.List ListNotations ::list_scope:'['_x_']' not
-R6247:6250 Coq.Init.Datatypes <> ::list_scope:x_'::'_x not
-R6263:6263 Coq.Init.Datatypes <> ::list_scope:x_'::'_x not
-R6276:6280 Coq.Init.Datatypes <> ::list_scope:x_'::'_x not
-R6265:6268 Coq.Init.Datatypes <> ::list_scope:x_'::'_x not
-R6106:6109 Coq.Init.Datatypes <> ::list_scope:x_'::'_x not
-R6104:6105 Coq.Lists.List ListNotations ::list_scope:'['_']' not
-R6110:6125 Rongorongo <> split_at_markers:45 def
-def 6385:6395 <> sections_of
-R6402:6407 Rongorongo <> Tablet rec
-binder 6398:6398 <> t:47
-R6412:6415 Coq.Init.Datatypes <> list ind
-R6418:6421 Coq.Init.Datatypes <> list ind
-R6423:6434 Rongorongo <> GlyphElement ind
-R6442:6457 Rongorongo <> split_at_markers def
-R6460:6468 Rongorongo <> linearize def
-R6470:6470 Rongorongo <> t:47 var
-prf 6561:6583 <> section_marker_relation
-binder 6594:6595 <> gs:48
-R6628:6630 Coq.Init.Logic <> ::type_scope:x_'='_x not
-R6600:6605 Coq.Init.Datatypes <> length def
-R6608:6623 Rongorongo <> split_at_markers def
-R6625:6626 Rongorongo <> gs:48 var
-R6631:6631 Coq.Init.Datatypes <> S constr
-R6634:6647 Rongorongo <> count_sections def
-R6649:6650 Rongorongo <> gs:48 var
-R6732:6748 Rongorongo <> is_section_marker def
-R6732:6748 Rongorongo <> is_section_marker def
-R6780:6793 Rongorongo <> count_sections def
-R6865:6878 Rongorongo <> count_sections def
-R6927:6942 Rongorongo <> split_at_markers def
-R6927:6942 Rongorongo <> split_at_markers def
-def 7103:7118 <> flatten_sections
-R7128:7131 Coq.Init.Datatypes <> list ind
-R7134:7137 Coq.Init.Datatypes <> list ind
-R7139:7150 Rongorongo <> GlyphElement ind
-binder 7121:7124 <> secs:49
-R7156:7159 Coq.Init.Datatypes <> list ind
-R7161:7172 Rongorongo <> GlyphElement ind
-R7179:7186 Coq.Lists.List <> flat_map def
-R7201:7204 Rongorongo <> secs:49 var
-binder 7193:7193 <> s:50
-R7198:7198 Rongorongo <> s:50 var
-def 7378:7395 <> lunar_month_nights
-R7399:7401 Coq.Init.Datatypes <> nat ind
-def 7421:7432 <> lunar_phases
-R7436:7438 Coq.Init.Datatypes <> nat ind
-rec 7520:7530 <> PhaseMarker
-proj 7547:7555 <> phase_num
-proj 7582:7592 <> night_count
-R7559:7561 Coq.Init.Datatypes <> nat ind
-R7596:7598 Coq.Init.Datatypes <> nat ind
-def 7692:7702 <> valid_phase
-R7709:7719 Rongorongo <> PhaseMarker rec
-binder 7705:7705 <> p:54
-R7724:7727 Coq.Init.Datatypes <> bool ind
-R7734:7734 Coq.Init.Datatypes <> ::bool_scope:x_'&&'_x not
-R7752:7757 Coq.Init.Datatypes <> ::bool_scope:x_'&&'_x not
-R7786:7786 Coq.Init.Datatypes <> ::bool_scope:x_'&&'_x not
-R7736:7740 Coq.Arith.PeanoNat <> ::nat_scope:x_'<=?'_x not
-R7741:7749 Rongorongo <> phase_num proj
-R7751:7751 Rongorongo <> p:54 var
-R7769:7773 Coq.Arith.PeanoNat <> ::nat_scope:x_'<=?'_x not
-R7758:7766 Rongorongo <> phase_num proj
-R7768:7768 Rongorongo <> p:54 var
-R7774:7785 Rongorongo <> lunar_phases def
-rec 7830:7842 <> LunarCalendar
-proj 7862:7867 <> phases
-R7871:7874 Coq.Init.Datatypes <> list ind
-R7876:7886 Rongorongo <> PhaseMarker rec
-def 7955:7968 <> valid_calendar
-R7975:7987 Rongorongo <> LunarCalendar rec
-binder 7971:7971 <> c:57
-R7992:7995 Coq.Init.Datatypes <> bool ind
-R8124:8129 Coq.Init.Datatypes <> ::bool_scope:x_'&&'_x not
-R8002:8002 Coq.Init.Datatypes <> ::bool_scope:x_'&&'_x not
-R8036:8043 Coq.Init.Datatypes <> ::bool_scope:x_'&&'_x not
-R8123:8123 Coq.Init.Datatypes <> ::bool_scope:x_'&&'_x not
-R8020:8023 Coq.Arith.PeanoNat <> ::nat_scope:x_'=?'_x not
-R8003:8008 Coq.Init.Datatypes <> length def
-R8011:8016 Rongorongo <> phases proj
-R8018:8018 Rongorongo <> c:57 var
-R8024:8035 Rongorongo <> lunar_phases def
-R8101:8104 Coq.Arith.PeanoNat <> ::nat_scope:x_'=?'_x not
-R8044:8052 Coq.Lists.List <> fold_left def
-R8090:8095 Rongorongo <> phases proj
-R8097:8097 Rongorongo <> c:57 var
-binder 8059:8061 <> acc:58
-binder 8063:8063 <> p:59
-R8071:8073 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
-R8068:8070 Rongorongo <> acc:58 var
-R8074:8084 Rongorongo <> night_count proj
-R8086:8086 Rongorongo <> p:59 var
-R8105:8122 Rongorongo <> lunar_month_nights def
-R8130:8136 Coq.Lists.List <> forallb def
-R8151:8156 Rongorongo <> phases proj
-R8158:8158 Rongorongo <> c:57 var
-R8138:8148 Rongorongo <> valid_phase def
-def 8239:8251 <> moon_glyph_id
-R8255:8257 Coq.Init.Datatypes <> nat ind
-def 8299:8311 <> fish_glyph_id
-R8315:8317 Coq.Init.Datatypes <> nat ind
-def 8360:8372 <> is_moon_glyph
-R8379:8390 Rongorongo <> GlyphElement ind
-binder 8375:8375 <> e:60
-R8395:8398 Coq.Init.Datatypes <> bool ind
-R8411:8411 Rongorongo <> e:60 var
-R8422:8427 Rongorongo <> Single constr
-R8444:8447 Coq.Arith.PeanoNat <> ::nat_scope:x_'=?'_x not
-R8434:8441 Rongorongo <> glyph_id proj
-R8448:8460 Rongorongo <> moon_glyph_id def
-R8466:8473 Rongorongo <> Ligature constr
-R8494:8497 Coq.Arith.PeanoNat <> ::nat_scope:x_'=?'_x not
-R8483:8490 Rongorongo <> glyph_id proj
-R8498:8510 Rongorongo <> moon_glyph_id def
-def 8572:8590 <> count_phase_markers
-R8598:8601 Coq.Init.Datatypes <> list ind
-R8603:8614 Rongorongo <> GlyphElement ind
-binder 8593:8594 <> gs:62
-R8619:8621 Coq.Init.Datatypes <> nat ind
-R8628:8633 Coq.Init.Datatypes <> length def
-R8636:8641 Coq.Lists.List <> filter def
-R8657:8658 Rongorongo <> gs:62 var
-R8643:8655 Rongorongo <> is_moon_glyph def
-def 8757:8778 <> has_calendar_structure
-R8786:8789 Coq.Init.Datatypes <> list ind
-R8791:8802 Rongorongo <> GlyphElement ind
-binder 8781:8782 <> gs:63
-R8807:8810 Coq.Init.Datatypes <> bool ind
-R8817:8817 Coq.Init.Datatypes <> ::bool_scope:x_'&&'_x not
-R8856:8863 Coq.Init.Datatypes <> ::bool_scope:x_'&&'_x not
-R8896:8896 Coq.Init.Datatypes <> ::bool_scope:x_'&&'_x not
-R8840:8843 Coq.Arith.PeanoNat <> ::nat_scope:x_'=?'_x not
-R8818:8836 Rongorongo <> count_phase_markers def
-R8838:8839 Rongorongo <> gs:63 var
-R8844:8855 Rongorongo <> lunar_phases def
-R8882:8886 Coq.Arith.PeanoNat <> ::nat_scope:x_'<=?'_x not
-R8864:8881 Rongorongo <> lunar_month_nights def
-R8887:8892 Coq.Init.Datatypes <> length def
-R8894:8895 Rongorongo <> gs:63 var
-def 8961:8976 <> extract_calendar
-R8984:8987 Coq.Init.Datatypes <> list ind
-R8989:9000 Rongorongo <> GlyphElement ind
-binder 8979:8980 <> gs:64
-R9005:9010 Coq.Init.Datatypes <> option ind
-R9012:9024 Rongorongo <> LunarCalendar rec
-R9034:9055 Rongorongo <> has_calendar_structure def
-R9057:9058 Rongorongo <> gs:64 var
-R9251:9254 Coq.Init.Datatypes <> None constr
-R9117:9120 Coq.Init.Datatypes <> Some constr
-R9123:9132 Rongorongo <> mkCalendar constr
-R9135:9137 Coq.Lists.List <> map def
-R9222:9224 Coq.Lists.List <> seq def
-R9228:9239 Rongorongo <> lunar_phases def
-binder 9144:9144 <> n:65
-R9149:9155 Rongorongo <> mkPhase constr
-R9157:9157 Rongorongo <> n:65 var
-R9178:9180 Coq.Arith.PeanoNat <> ::nat_scope:x_'/'_x not
-R9160:9177 Rongorongo <> lunar_month_nights def
-R9181:9192 Rongorongo <> lunar_phases def
-prf 9310:9333 <> extract_preserves_nights
-binder 9344:9345 <> gs:66
-binder 9347:9347 <> c:67
-R9380:9385 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R9371:9373 Coq.Init.Logic <> ::type_scope:x_'='_x not
-R9352:9367 Rongorongo <> extract_calendar def
-R9369:9370 Rongorongo <> gs:66 var
-R9374:9377 Coq.Init.Datatypes <> Some constr
-R9379:9379 Rongorongo <> c:67 var
-R9443:9447 Coq.Init.Logic <> ::type_scope:x_'='_x not
-R9386:9394 Coq.Lists.List <> fold_left def
-R9432:9437 Rongorongo <> phases proj
-R9439:9439 Rongorongo <> c:67 var
-binder 9401:9403 <> acc:68
-binder 9405:9405 <> p:69
-R9413:9415 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
-R9410:9412 Rongorongo <> acc:68 var
-R9416:9426 Rongorongo <> night_count proj
-R9428:9428 Rongorongo <> p:69 var
-R9460:9463 Coq.Init.Peano <> ::nat_scope:x_'*'_x not
-R9497:9497 Coq.Init.Peano <> ::nat_scope:x_'*'_x not
-R9448:9459 Rongorongo <> lunar_phases def
-R9482:9484 Coq.Arith.PeanoNat <> ::nat_scope:x_'/'_x not
-R9464:9481 Rongorongo <> lunar_month_nights def
-R9485:9496 Rongorongo <> lunar_phases def
-R9533:9548 Rongorongo <> extract_calendar def
-R9568:9589 Rongorongo <> has_calendar_structure def
-R9568:9589 Rongorongo <> has_calendar_structure def
-def 9974:9987 <> chief_glyph_id
-R9991:9993 Coq.Init.Datatypes <> nat ind
-def 10014:10030 <> patronym_glyph_id
-R10034:10036 Coq.Init.Datatypes <> nat ind
-def 10057:10071 <> is_chief_marker
-R10078:10089 Rongorongo <> GlyphElement ind
-binder 10074:10074 <> e:70
-R10094:10097 Coq.Init.Datatypes <> bool ind
-R10110:10110 Rongorongo <> e:70 var
-R10121:10126 Rongorongo <> Single constr
-R10143:10146 Coq.Arith.PeanoNat <> ::nat_scope:x_'=?'_x not
-R10133:10140 Rongorongo <> glyph_id proj
-R10147:10160 Rongorongo <> chief_glyph_id def
-R10166:10173 Rongorongo <> Ligature constr
-R10194:10197 Coq.Arith.PeanoNat <> ::nat_scope:x_'=?'_x not
-R10183:10190 Rongorongo <> glyph_id proj
-R10198:10211 Rongorongo <> chief_glyph_id def
-def 10232:10249 <> is_patronym_marker
-R10256:10267 Rongorongo <> GlyphElement ind
-binder 10252:10252 <> e:72
-R10272:10275 Coq.Init.Datatypes <> bool ind
-R10288:10288 Rongorongo <> e:72 var
-R10299:10304 Rongorongo <> Single constr
-R10321:10324 Coq.Arith.PeanoNat <> ::nat_scope:x_'=?'_x not
-R10311:10318 Rongorongo <> glyph_id proj
-R10325:10341 Rongorongo <> patronym_glyph_id def
-R10347:10354 Rongorongo <> Ligature constr
-R10375:10378 Coq.Arith.PeanoNat <> ::nat_scope:x_'=?'_x not
-R10364:10371 Rongorongo <> glyph_id proj
-R10379:10395 Rongorongo <> patronym_glyph_id def
-def 10450:10461 <> count_chiefs
-R10469:10472 Coq.Init.Datatypes <> list ind
-R10474:10485 Rongorongo <> GlyphElement ind
-binder 10464:10465 <> gs:74
-R10490:10492 Coq.Init.Datatypes <> nat ind
-R10499:10504 Coq.Init.Datatypes <> length def
-R10507:10512 Coq.Lists.List <> filter def
-R10530:10531 Rongorongo <> gs:74 var
-R10514:10528 Rongorongo <> is_chief_marker def
-def 10547:10561 <> count_patronyms
-R10569:10572 Coq.Init.Datatypes <> list ind
-R10574:10585 Rongorongo <> GlyphElement ind
-binder 10564:10565 <> gs:75
-R10590:10592 Coq.Init.Datatypes <> nat ind
-R10599:10604 Coq.Init.Datatypes <> length def
-R10607:10612 Coq.Lists.List <> filter def
-R10633:10634 Rongorongo <> gs:75 var
-R10614:10631 Rongorongo <> is_patronym_marker def
-def 10716:10738 <> has_genealogy_structure
-R10746:10749 Coq.Init.Datatypes <> list ind
-R10751:10762 Rongorongo <> GlyphElement ind
-binder 10741:10742 <> gs:76
-R10767:10770 Coq.Init.Datatypes <> bool ind
-R10791:10802 Rongorongo <> count_chiefs def
-R10804:10805 Rongorongo <> gs:76 var
-binder 10781:10786 <> chiefs:77
-R10824:10838 Rongorongo <> count_patronyms def
-R10840:10841 Rongorongo <> gs:76 var
-binder 10816:10819 <> pats:78
-R10955:10959 Coq.Init.Datatypes <> ::bool_scope:x_'||'_x not
-R10976:10976 Coq.Init.Datatypes <> ::bool_scope:x_'||'_x not
-R10917:10917 Coq.Init.Datatypes <> ::bool_scope:x_'||'_x not
-R10932:10937 Coq.Init.Datatypes <> ::bool_scope:x_'||'_x not
-R10954:10954 Coq.Init.Datatypes <> ::bool_scope:x_'||'_x not
-R10924:10927 Coq.Arith.PeanoNat <> ::nat_scope:x_'=?'_x not
-R10918:10923 Rongorongo <> chiefs:77 var
-R10928:10931 Rongorongo <> pats:78 var
-R10946:10949 Coq.Arith.PeanoNat <> ::nat_scope:x_'=?'_x not
-R10938:10938 Coq.Init.Datatypes <> S constr
-R10940:10945 Rongorongo <> chiefs:77 var
-R10950:10953 Rongorongo <> pats:78 var
-R10966:10969 Coq.Arith.PeanoNat <> ::nat_scope:x_'=?'_x not
-R10960:10965 Rongorongo <> chiefs:77 var
-R10970:10970 Coq.Init.Datatypes <> S constr
-R10972:10975 Rongorongo <> pats:78 var
-def 11045:11064 <> staff_patronym_count
-R11068:11070 Coq.Init.Datatypes <> nat ind
-def 11148:11162 <> tablet_G_chiefs
-R11166:11168 Coq.Init.Datatypes <> nat ind
-def 11296:11303 <> glyph_eq
-R11314:11325 Rongorongo <> BarthelGlyph rec
-binder 11306:11307 <> g1:79
-binder 11309:11310 <> g2:80
-R11330:11333 Coq.Init.Datatypes <> bool ind
-R11351:11354 Coq.Arith.PeanoNat <> ::nat_scope:x_'=?'_x not
-R11340:11347 Rongorongo <> glyph_id proj
-R11349:11350 Rongorongo <> g1:79 var
-R11355:11362 Rongorongo <> glyph_id proj
-R11364:11365 Rongorongo <> g2:80 var
-def 11380:11389 <> element_eq
-R11400:11411 Rongorongo <> GlyphElement ind
-binder 11392:11393 <> e1:81
-binder 11395:11396 <> e2:82
-R11416:11419 Coq.Init.Datatypes <> bool ind
-R11436:11437 Rongorongo <> e2:82 var
-R11432:11433 Rongorongo <> e1:81 var
-R11448:11453 Rongorongo <> Single constr
-R11459:11464 Rongorongo <> Single constr
-R11472:11479 Rongorongo <> glyph_eq def
-R11491:11498 Rongorongo <> Ligature constr
-R11507:11514 Rongorongo <> Ligature constr
-R11539:11542 Coq.Init.Datatypes <> ::bool_scope:x_'&&'_x not
-R11525:11532 Rongorongo <> glyph_eq def
-R11543:11550 Rongorongo <> glyph_eq def
-R11570:11574 Coq.Init.Datatypes <> false constr
-def 11644:11657 <> is_subsequence
-R11668:11671 Coq.Init.Datatypes <> list ind
-R11673:11684 Rongorongo <> GlyphElement ind
-binder 11660:11661 <> s1:85
-binder 11663:11664 <> s2:86
-R11689:11692 Coq.Init.Datatypes <> bool ind
-R11709:11710 Rongorongo <> s2:86 var
-R11705:11706 Rongorongo <> s1:85 var
-R11721:11722 Coq.Lists.List ListNotations ::list_scope:'['_']' not
-R11730:11733 Coq.Init.Datatypes <> true constr
-R11742:11743 Coq.Lists.List ListNotations ::list_scope:'['_']' not
-R11748:11752 Coq.Init.Datatypes <> false constr
-R11759:11762 Coq.Init.Datatypes <> ::list_scope:x_'::'_x not
-R11768:11771 Coq.Init.Datatypes <> ::list_scope:x_'::'_x not
-R11787:11796 Rongorongo <> element_eq def
-R11839:11852 Rongorongo <> is_subsequence:87 def
-R11854:11855 Rongorongo <> s1:85 var
-R11807:11820 Rongorongo <> is_subsequence:87 def
-def 11937:11950 <> shares_passage
-R11961:11966 Rongorongo <> Tablet rec
-binder 11953:11954 <> t1:90
-binder 11956:11957 <> t2:91
-R11980:11983 Coq.Init.Datatypes <> list ind
-R11985:11996 Rongorongo <> GlyphElement ind
-binder 11970:11976 <> passage:92
-R12001:12004 Coq.Init.Datatypes <> bool ind
-R12048:12053 Coq.Init.Datatypes <> ::bool_scope:x_'&&'_x not
-R12011:12024 Rongorongo <> is_subsequence def
-R12026:12032 Rongorongo <> passage:92 var
-R12035:12043 Rongorongo <> linearize def
-R12045:12046 Rongorongo <> t1:90 var
-R12054:12067 Rongorongo <> is_subsequence def
-R12069:12075 Rongorongo <> passage:92 var
-R12078:12086 Rongorongo <> linearize def
-R12088:12089 Rongorongo <> t2:91 var
-prf 12233:12241 <> flip_flip
-binder 12252:12252 <> o:93
-R12292:12294 Coq.Init.Logic <> ::type_scope:x_'='_x not
-R12255:12270 Rongorongo <> flip_orientation def
-R12273:12288 Rongorongo <> flip_orientation def
-R12290:12290 Rongorongo <> o:93 var
-R12295:12295 Rongorongo <> o:93 var
-prf 12391:12412 <> orientation_alternates
-binder 12423:12423 <> n:94
-R12450:12452 Coq.Init.Logic <> ::type_scope:x_'='_x not
-R12428:12443 Rongorongo <> line_orientation def
-R12446:12446 Coq.Init.Datatypes <> S constr
-R12448:12448 Rongorongo <> n:94 var
-R12453:12468 Rongorongo <> flip_orientation def
-R12471:12486 Rongorongo <> line_orientation def
-R12488:12488 Rongorongo <> n:94 var
-prf 12609:12624 <> even_line_normal
-binder 12635:12635 <> n:95
-R12657:12660 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R12650:12652 Coq.Init.Logic <> ::type_scope:x_'='_x not
-R12640:12647 Coq.Arith.PeanoNat Nat even def
-R12649:12649 Rongorongo <> n:95 var
-R12653:12656 Coq.Init.Datatypes <> true constr
-R12679:12681 Coq.Init.Logic <> ::type_scope:x_'='_x not
-R12661:12676 Rongorongo <> line_orientation def
-R12678:12678 Rongorongo <> n:95 var
-R12682:12687 Rongorongo <> Normal constr
-R12718:12739 Coq.Init.Wf <> well_founded_induction thm
-R12741:12745 Coq.Arith.Wf_nat <> lt_wf thm
-R12718:12739 Coq.Init.Wf <> well_founded_induction thm
-R12741:12745 Coq.Arith.Wf_nat <> lt_wf thm
-prf 12957:12973 <> odd_line_inverted
-binder 12984:12984 <> n:96
-R13005:13008 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R12998:13000 Coq.Init.Logic <> ::type_scope:x_'='_x not
-R12989:12995 Coq.Arith.PeanoNat Nat odd def
-R12997:12997 Rongorongo <> n:96 var
-R13001:13004 Coq.Init.Datatypes <> true constr
-R13027:13029 Coq.Init.Logic <> ::type_scope:x_'='_x not
-R13009:13024 Rongorongo <> line_orientation def
-R13026:13026 Rongorongo <> n:96 var
-R13030:13037 Rongorongo <> Inverted constr
-R13068:13089 Coq.Init.Wf <> well_founded_induction thm
-R13091:13095 Coq.Arith.Wf_nat <> lt_wf thm
-R13068:13089 Coq.Init.Wf <> well_founded_induction thm
-R13091:13095 Coq.Arith.Wf_nat <> lt_wf thm
-prf 13346:13361 <> linearize_length
-binder 13372:13372 <> t:97
-R13390:13392 Coq.Init.Logic <> ::type_scope:x_'='_x not
-R13377:13387 Rongorongo <> glyph_count def
-R13389:13389 Rongorongo <> t:97 var
-R13433:13453 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
-R13393:13398 Coq.Init.Datatypes <> length def
-R13401:13408 Coq.Lists.List <> flat_map def
-R13418:13428 Rongorongo <> recto_lines proj
-R13430:13430 Rongorongo <> t:97 var
-R13410:13415 Rongorongo <> glyphs proj
-R13454:13459 Coq.Init.Datatypes <> length def
-R13462:13469 Coq.Lists.List <> flat_map def
-R13479:13489 Rongorongo <> verso_lines proj
-R13491:13491 Rongorongo <> t:97 var
-R13471:13476 Rongorongo <> glyphs proj
-R13522:13532 Rongorongo <> glyph_count def
-R13535:13543 Rongorongo <> linearize def
-R13556:13565 Coq.Lists.List <> app_length thm
-R13556:13565 Coq.Lists.List <> app_length thm
-R13556:13565 Coq.Lists.List <> app_length thm
-prf 13627:13648 <> empty_tablet_no_glyphs
-binder 13659:13659 <> n:98
-R13694:13696 Coq.Init.Logic <> ::type_scope:x_'='_x not
-R13664:13674 Rongorongo <> glyph_count def
-R13677:13684 Rongorongo <> mkTablet constr
-R13686:13686 Rongorongo <> n:98 var
-R13688:13689 Coq.Lists.List ListNotations ::list_scope:'['_']' not
-R13691:13692 Coq.Lists.List ListNotations ::list_scope:'['_']' not
-prf 13794:13813 <> recto_only_linearize
-binder 13824:13824 <> n:99
-binder 13826:13827 <> rs:100
-R13860:13862 Coq.Init.Logic <> ::type_scope:x_'='_x not
-R13832:13840 Rongorongo <> linearize def
-R13843:13850 Rongorongo <> mkTablet constr
-R13852:13852 Rongorongo <> n:99 var
-R13854:13855 Rongorongo <> rs:100 var
-R13857:13858 Coq.Lists.List ListNotations ::list_scope:'['_']' not
-R13863:13870 Coq.Lists.List <> flat_map def
-R13879:13880 Rongorongo <> rs:100 var
-R13872:13877 Rongorongo <> glyphs proj
-R13912:13920 Rongorongo <> linearize def
-R13940:13948 Coq.Lists.List <> app_nil_r thm
-R13940:13948 Coq.Lists.List <> app_nil_r thm
-R13940:13948 Coq.Lists.List <> app_nil_r thm
-prf 14013:14027 <> element_eq_refl
-binder 14038:14038 <> e:101
-R14055:14057 Coq.Init.Logic <> ::type_scope:x_'='_x not
-R14041:14050 Rongorongo <> element_eq def
-R14052:14052 Rongorongo <> e:101 var
-R14054:14054 Rongorongo <> e:101 var
-R14058:14061 Coq.Init.Datatypes <> true constr
-R14100:14109 Rongorongo <> element_eq def
-R14112:14119 Rongorongo <> glyph_eq def
-R14131:14142 Coq.Arith.PeanoNat Nat eqb_refl thm
-R14131:14142 Coq.Arith.PeanoNat Nat eqb_refl thm
-R14131:14142 Coq.Arith.PeanoNat Nat eqb_refl thm
-R14131:14142 Coq.Arith.PeanoNat Nat eqb_refl thm
-R14131:14142 Coq.Arith.PeanoNat Nat eqb_refl thm
-R14131:14142 Coq.Arith.PeanoNat Nat eqb_refl thm
-R14131:14142 Coq.Arith.PeanoNat Nat eqb_refl thm
-R14131:14142 Coq.Arith.PeanoNat Nat eqb_refl thm
-prf 14202:14217 <> subsequence_refl
-binder 14228:14229 <> gs:102
-R14252:14254 Coq.Init.Logic <> ::type_scope:x_'='_x not
-R14232:14245 Rongorongo <> is_subsequence def
-R14247:14248 Rongorongo <> gs:102 var
-R14250:14251 Rongorongo <> gs:102 var
-R14255:14258 Coq.Init.Datatypes <> true constr
-R14337:14351 Rongorongo <> element_eq_refl thm
-R14337:14351 Rongorongo <> element_eq_refl thm
-R14337:14351 Rongorongo <> element_eq_refl thm
-prf 14428:14437 <> subseq_aux
-binder 14448:14448 <> n:103
-R14496:14496 Coq.Init.Logic <> ::type_scope:x_'/\'_x not
-R14612:14663 Coq.Init.Logic <> ::type_scope:x_'/\'_x not
-R14775:14775 Coq.Init.Logic <> ::type_scope:x_'/\'_x not
-binder 14504:14505 <> s1:104
-binder 14507:14508 <> s2:105
-binder 14510:14510 <> x:106
-R14539:14546 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R14534:14537 Coq.Init.Peano <> ::nat_scope:x_'<='_x not
-R14522:14524 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
-R14513:14518 Coq.Init.Datatypes <> length def
-R14520:14521 Rongorongo <> s1:104 var
-R14525:14530 Coq.Init.Datatypes <> length def
-R14532:14533 Rongorongo <> s2:105 var
-R14538:14538 Rongorongo <> n:103 var
-R14574:14577 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R14567:14569 Coq.Init.Logic <> ::type_scope:x_'='_x not
-R14547:14560 Rongorongo <> is_subsequence def
-R14562:14563 Rongorongo <> s1:104 var
-R14565:14566 Rongorongo <> s2:105 var
-R14570:14573 Coq.Init.Datatypes <> true constr
-R14605:14607 Coq.Init.Logic <> ::type_scope:x_'='_x not
-R14578:14591 Rongorongo <> is_subsequence def
-R14593:14594 Rongorongo <> s1:104 var
-R14598:14601 Coq.Init.Datatypes <> ::list_scope:x_'::'_x not
-R14597:14597 Rongorongo <> x:106 var
-R14602:14603 Rongorongo <> s2:105 var
-R14608:14611 Coq.Init.Datatypes <> true constr
-binder 14671:14671 <> x:107
-binder 14673:14674 <> xs:108
-binder 14676:14676 <> s:109
-R14704:14711 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R14699:14702 Coq.Init.Peano <> ::nat_scope:x_'<='_x not
-R14688:14690 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
-R14679:14684 Coq.Init.Datatypes <> length def
-R14686:14687 Rongorongo <> xs:108 var
-R14691:14696 Coq.Init.Datatypes <> length def
-R14698:14698 Rongorongo <> s:109 var
-R14703:14703 Rongorongo <> n:103 var
-R14745:14748 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R14738:14740 Coq.Init.Logic <> ::type_scope:x_'='_x not
-R14712:14725 Rongorongo <> is_subsequence def
-R14729:14732 Coq.Init.Datatypes <> ::list_scope:x_'::'_x not
-R14728:14728 Rongorongo <> x:107 var
-R14733:14734 Rongorongo <> xs:108 var
-R14737:14737 Rongorongo <> s:109 var
-R14741:14744 Coq.Init.Datatypes <> true constr
-R14768:14770 Coq.Init.Logic <> ::type_scope:x_'='_x not
-R14749:14762 Rongorongo <> is_subsequence def
-R14764:14765 Rongorongo <> xs:108 var
-R14767:14767 Rongorongo <> s:109 var
-R14771:14774 Coq.Init.Datatypes <> true constr
-R15350:15359 Rongorongo <> element_eq def
-R15350:15359 Rongorongo <> element_eq def
-R15393:15402 Rongorongo <> element_eq def
-R15393:15402 Rongorongo <> element_eq def
-R15624:15633 Rongorongo <> element_eq def
-R15624:15633 Rongorongo <> element_eq def
-R15832:15841 Rongorongo <> element_eq def
-R15832:15841 Rongorongo <> element_eq def
-prf 16027:16044 <> subsequence_weaken
-binder 16055:16056 <> s1:110
-binder 16058:16059 <> s2:111
-binder 16061:16061 <> x:112
-R16093:16098 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R16086:16088 Coq.Init.Logic <> ::type_scope:x_'='_x not
-R16066:16079 Rongorongo <> is_subsequence def
-R16081:16082 Rongorongo <> s1:110 var
-R16084:16085 Rongorongo <> s2:111 var
-R16089:16092 Coq.Init.Datatypes <> true constr
-R16126:16128 Coq.Init.Logic <> ::type_scope:x_'='_x not
-R16099:16112 Rongorongo <> is_subsequence def
-R16114:16115 Rongorongo <> s1:110 var
-R16119:16122 Coq.Init.Datatypes <> ::list_scope:x_'::'_x not
-R16118:16118 Rongorongo <> x:112 var
-R16123:16124 Rongorongo <> s2:111 var
-R16129:16132 Coq.Init.Datatypes <> true constr
-R16174:16183 Rongorongo <> subseq_aux thm
-R16195:16197 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
-R16186:16191 Coq.Init.Datatypes <> length def
-R16198:16203 Coq.Init.Datatypes <> length def
-R16174:16183 Rongorongo <> subseq_aux thm
-R16195:16197 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
-R16186:16191 Coq.Init.Datatypes <> length def
-R16198:16203 Coq.Init.Datatypes <> length def
-prf 16265:16285 <> subsequence_drop_head
-binder 16296:16296 <> x:113
-binder 16298:16299 <> xs:114
-binder 16301:16301 <> s:115
-R16339:16344 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R16332:16334 Coq.Init.Logic <> ::type_scope:x_'='_x not
-R16306:16319 Rongorongo <> is_subsequence def
-R16323:16326 Coq.Init.Datatypes <> ::list_scope:x_'::'_x not
-R16322:16322 Rongorongo <> x:113 var
-R16327:16328 Rongorongo <> xs:114 var
-R16331:16331 Rongorongo <> s:115 var
-R16335:16338 Coq.Init.Datatypes <> true constr
-R16364:16366 Coq.Init.Logic <> ::type_scope:x_'='_x not
-R16345:16358 Rongorongo <> is_subsequence def
-R16360:16361 Rongorongo <> xs:114 var
-R16363:16363 Rongorongo <> s:115 var
-R16367:16370 Coq.Init.Datatypes <> true constr
-R16411:16420 Rongorongo <> subseq_aux thm
-R16432:16434 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
-R16423:16428 Coq.Init.Datatypes <> length def
-R16435:16440 Coq.Init.Datatypes <> length def
-R16411:16420 Rongorongo <> subseq_aux thm
-R16432:16434 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
-R16423:16428 Coq.Init.Datatypes <> length def
-R16435:16440 Coq.Init.Datatypes <> length def
-prf 16548:16564 <> subsequence_trans
-binder 16575:16576 <> s1:116
-binder 16578:16579 <> s2:117
-binder 16581:16582 <> s3:118
-R16614:16619 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R16607:16609 Coq.Init.Logic <> ::type_scope:x_'='_x not
-R16587:16600 Rongorongo <> is_subsequence def
-R16602:16603 Rongorongo <> s1:116 var
-R16605:16606 Rongorongo <> s2:117 var
-R16610:16613 Coq.Init.Datatypes <> true constr
-R16647:16652 Coq.Init.Logic <> ::type_scope:x_'->'_x not
-R16640:16642 Coq.Init.Logic <> ::type_scope:x_'='_x not
-R16620:16633 Rongorongo <> is_subsequence def
-R16635:16636 Rongorongo <> s2:117 var
-R16638:16639 Rongorongo <> s3:118 var
-R16643:16646 Coq.Init.Datatypes <> true constr
-R16673:16675 Coq.Init.Logic <> ::type_scope:x_'='_x not
-R16653:16666 Rongorongo <> is_subsequence def
-R16668:16669 Rongorongo <> s1:116 var
-R16671:16672 Rongorongo <> s3:118 var
-R16676:16679 Coq.Init.Datatypes <> true constr
-R17103:17112 Rongorongo <> element_eq def
-R17142:17151 Rongorongo <> element_eq def
-R17181:17190 Rongorongo <> element_eq def
-R17103:17112 Rongorongo <> element_eq def
-R17142:17151 Rongorongo <> element_eq def
-R17142:17151 Rongorongo <> element_eq def
-R17181:17190 Rongorongo <> element_eq def
-R17181:17190 Rongorongo <> element_eq def
-R17181:17190 Rongorongo <> element_eq def
-R17181:17190 Rongorongo <> element_eq def
-R17357:17377 Rongorongo <> subsequence_drop_head thm
-R17357:17377 Rongorongo <> subsequence_drop_head thm
-R17471:17491 Rongorongo <> subsequence_drop_head thm
-R17471:17491 Rongorongo <> subsequence_drop_head thm
-R17598:17618 Rongorongo <> subsequence_drop_head thm
-R17598:17618 Rongorongo <> subsequence_drop_head thm
-R17658:17678 Rongorongo <> subsequence_drop_head thm
-R17658:17678 Rongorongo <> subsequence_drop_head thm
-R17794:17803 Rongorongo <> element_eq def
-R17806:17813 Rongorongo <> glyph_eq def
-R17889:17898 Coq.Arith.PeanoNat Nat eqb_eq thm
-R17889:17898 Coq.Arith.PeanoNat Nat eqb_eq thm
-R17914:17923 Coq.Arith.PeanoNat Nat eqb_eq thm
-R17914:17923 Coq.Arith.PeanoNat Nat eqb_eq thm
-R17947:17957 Coq.Arith.PeanoNat Nat eqb_neq thm
-R17947:17957 Coq.Arith.PeanoNat Nat eqb_neq thm
-R17988:18000 Coq.Bool.Bool <> andb_true_iff thm
-R17988:18000 Coq.Bool.Bool <> andb_true_iff thm
-R17988:18000 Coq.Bool.Bool <> andb_true_iff thm
-R18031:18044 Coq.Bool.Bool <> andb_false_iff thm
-R18031:18044 Coq.Bool.Bool <> andb_false_iff thm
-R18031:18044 Coq.Bool.Bool <> andb_false_iff thm
-R18134:18143 Coq.Arith.PeanoNat Nat eqb_eq thm
-R18134:18143 Coq.Arith.PeanoNat Nat eqb_eq thm
-R18160:18169 Coq.Arith.PeanoNat Nat eqb_eq thm
-R18160:18169 Coq.Arith.PeanoNat Nat eqb_eq thm
-R18194:18203 Coq.Arith.PeanoNat Nat eqb_eq thm
-R18194:18203 Coq.Arith.PeanoNat Nat eqb_eq thm
-R18220:18229 Coq.Arith.PeanoNat Nat eqb_eq thm
-R18220:18229 Coq.Arith.PeanoNat Nat eqb_eq thm
-R18323:18333 Coq.Arith.PeanoNat Nat eqb_neq thm
-R18295:18305 Coq.Arith.PeanoNat Nat eqb_neq thm
-R18295:18305 Coq.Arith.PeanoNat Nat eqb_neq thm
-R18323:18333 Coq.Arith.PeanoNat Nat eqb_neq thm
-R18401:18404 Coq.Init.Datatypes <> ::list_scope:x_'::'_x not
-R18401:18404 Coq.Init.Datatypes <> ::list_scope:x_'::'_x not
-R18590:18593 Coq.Init.Datatypes <> ::list_scope:x_'::'_x not
-R18590:18593 Coq.Init.Datatypes <> ::list_scope:x_'::'_x not
-R18611:18628 Rongorongo <> subsequence_weaken thm
-R18611:18628 Rongorongo <> subsequence_weaken thm
-prf 18704:18721 <> shares_passage_sym
-binder 18732:18733 <> t1:119
-binder 18735:18736 <> t2:120
-binder 18738:18738 <> p:121
-R18765:18767 Coq.Init.Logic <> ::type_scope:x_'='_x not
-R18743:18756 Rongorongo <> shares_passage def
-R18758:18759 Rongorongo <> t1:119 var
-R18761:18762 Rongorongo <> t2:120 var
-R18764:18764 Rongorongo <> p:121 var
-R18768:18781 Rongorongo <> shares_passage def
-R18783:18784 Rongorongo <> t2:120 var
-R18786:18787 Rongorongo <> t1:119 var
-R18789:18789 Rongorongo <> p:121 var
-R18824:18837 Rongorongo <> shares_passage def
-R18850:18858 Coq.Bool.Bool <> andb_comm thm
-R18850:18858 Coq.Bool.Bool <> andb_comm thm
-R18850:18858 Coq.Bool.Bool <> andb_comm thm
-def 18970:18980 <> tablet_A_id
-R18984:18986 Coq.Init.Datatypes <> nat ind
-def 19039:19049 <> tablet_B_id
-R19053:19055 Coq.Init.Datatypes <> nat ind
-def 19116:19126 <> tablet_C_id
-R19130:19132 Coq.Init.Datatypes <> nat ind
-def 19191:19201 <> tablet_I_id
-R19205:19207 Coq.Init.Datatypes <> nat ind
-def 19270:19280 <> tablet_G_id
-R19284:19286 Coq.Init.Datatypes <> nat ind
-def 19374:19393 <> total_corpus_tablets
-R19397:19399 Coq.Init.Datatypes <> nat ind
-def 19419:19436 <> barthel_core_signs
-R19440:19442 Coq.Init.Datatypes <> nat ind
-def 19463:19481 <> barthel_total_signs
-R19485:19487 Coq.Init.Datatypes <> nat ind
-def 19535:19546 <> tahua_glyphs
-R19550:19552 Coq.Init.Datatypes <> nat ind
-def 19574:19585 <> aruku_glyphs
-R19589:19591 Coq.Init.Datatypes <> nat ind
-def 19613:19624 <> staff_glyphs
-R19628:19630 Coq.Init.Datatypes <> nat ind
-def 19694:19710 <> tablet_G_sections
-R19714:19716 Coq.Init.Datatypes <> nat ind
-def 19783:19797 <> staff_patronyms
-R19801:19803 Coq.Init.Datatypes <> nat ind
-prf 19884:19905 <> tablet_G_segment_count
-R19932:19934 Coq.Init.Logic <> ::type_scope:x_'='_x not
-R19928:19930 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
-R19911:19927 Rongorongo <> tablet_G_sections def
-prf 20025:20047 <> mamari_phase_constraint
-R20065:20067 Coq.Init.Logic <> ::type_scope:x_'='_x not
-R20053:20064 Rongorongo <> lunar_phases def
-prf 20148:20166 <> barthel_range_valid
-binder 20177:20177 <> g:122
-R20204:20210 Coq.Init.Logic <> ::type_scope:x_'<->'_x not
-R20197:20199 Coq.Init.Logic <> ::type_scope:x_'='_x not
-R20182:20194 Rongorongo <> valid_barthel def
-R20196:20196 Rongorongo <> g:122 var
-R20200:20203 Coq.Init.Datatypes <> true constr
-R20226:20229 Coq.Init.Logic <> ::type_scope:x_'/\'_x not
-R20212:20215 Coq.Init.Peano <> ::nat_scope:x_'<='_x not
-R20216:20223 Rongorongo <> glyph_id proj
-R20225:20225 Rongorongo <> g:122 var
-R20240:20243 Coq.Init.Peano <> ::nat_scope:x_'<='_x not
-R20230:20237 Rongorongo <> glyph_id proj
-R20239:20239 Rongorongo <> g:122 var
-R20244:20262 Rongorongo <> barthel_total_signs def
-R20291:20303 Rongorongo <> valid_barthel def
-R20306:20324 Rongorongo <> barthel_total_signs def
-R20337:20349 Coq.Bool.Bool <> andb_true_iff thm
-R20353:20362 Coq.Arith.PeanoNat Nat leb_le thm
-R20337:20349 Coq.Bool.Bool <> andb_true_iff thm
-R20337:20349 Coq.Bool.Bool <> andb_true_iff thm
-R20353:20362 Coq.Arith.PeanoNat Nat leb_le thm
-R20353:20362 Coq.Arith.PeanoNat Nat leb_le thm
-R20353:20362 Coq.Arith.PeanoNat Nat leb_le thm
-R20353:20362 Coq.Arith.PeanoNat Nat leb_le thm
-prf 20423:20441 <> tablet_linearizable
-binder 20452:20452 <> t:123
-R20457:20463 Coq.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
-R20466:20467 Coq.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
-binder 20464:20465 <> gs:124
-R20479:20481 Coq.Init.Logic <> ::type_scope:x_'='_x not
-R20468:20476 Rongorongo <> linearize def
-R20478:20478 Rongorongo <> t:123 var
-R20482:20483 Rongorongo <> gs:124 var
-R20513:20521 Rongorongo <> linearize def
-R20513:20521 Rongorongo <> linearize def
-prf 20598:20615 <> sections_partition
-binder 20626:20627 <> gs:125
-R20660:20662 Coq.Init.Logic <> ::type_scope:x_'='_x not
-R20632:20637 Coq.Init.Datatypes <> length def
-R20640:20655 Rongorongo <> split_at_markers def
-R20657:20658 Rongorongo <> gs:125 var
-R20663:20663 Coq.Init.Datatypes <> S constr
-R20666:20679 Rongorongo <> count_sections def
-R20681:20682 Rongorongo <> gs:125 var
-R20701:20723 Rongorongo <> section_marker_relation thm
-R20701:20723 Rongorongo <> section_marker_relation thm
-prf 20811:20832 <> tablet_segment_formula
-binder 20843:20843 <> t:126
-R20870:20872 Coq.Init.Logic <> ::type_scope:x_'='_x not
-R20848:20853 Coq.Init.Datatypes <> length def
-R20856:20866 Rongorongo <> sections_of def
-R20868:20868 Rongorongo <> t:126 var
-R20873:20873 Coq.Init.Datatypes <> S constr
-R20876:20889 Rongorongo <> count_sections def
-R20892:20900 Rongorongo <> linearize def
-R20902:20902 Rongorongo <> t:126 var
-R20933:20943 Rongorongo <> sections_of def
-R20952:20974 Rongorongo <> section_marker_relation thm
-R20952:20974 Rongorongo <> section_marker_relation thm
+R1898:1912 Coq.Arith.Arith <> <> lib
+R1930:1943 Coq.Lists.List <> <> lib
+R1961:1973 Coq.Bool.Bool <> <> lib
+R1991:1993 Coq.micromega.Lia <> <> lib
+R2011:2026 Coq.Arith.Wf_nat <> <> lib
+R2036:2048 Coq.Lists.List ListNotations <> mod
+rec 2212:2223 <> BarthelGlyph
+proj 2240:2247 <> glyph_id
+proj 2280:2286 <> is_core
+R2251:2253 Coq.Init.Datatypes <> nat ind
+R2290:2293 Coq.Init.Datatypes <> bool ind
+def 2349:2361 <> valid_barthel
+R2368:2379 Rongorongo <> BarthelGlyph rec
+binder 2364:2364 <> g:4
+R2384:2387 Coq.Init.Datatypes <> bool ind
+R2394:2394 Coq.Init.Datatypes <> ::bool_scope:x_'&&'_x not
+R2411:2416 Coq.Init.Datatypes <> ::bool_scope:x_'&&'_x not
+R2435:2435 Coq.Init.Datatypes <> ::bool_scope:x_'&&'_x not
+R2396:2400 Coq.Arith.PeanoNat <> ::nat_scope:x_'<=?'_x not
+R2401:2408 Rongorongo <> glyph_id proj
+R2410:2410 Rongorongo <> g:4 var
+R2427:2431 Coq.Arith.PeanoNat <> ::nat_scope:x_'<=?'_x not
+R2417:2424 Rongorongo <> glyph_id proj
+R2426:2426 Rongorongo <> g:4 var
+ind 2497:2508 <> GlyphElement
+constr 2517:2522 <> Single
+constr 2559:2566 <> Ligature
+R2538:2541 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R2526:2537 Rongorongo <> BarthelGlyph rec
+R2542:2553 Rongorongo <> GlyphElement:5 ind
+R2582:2585 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R2570:2581 Rongorongo <> BarthelGlyph rec
+R2598:2601 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R2586:2597 Rongorongo <> BarthelGlyph rec
+R2602:2613 Rongorongo <> GlyphElement:5 ind
+scheme 2497:2508 <> GlyphElement_rect
+scheme 2497:2508 <> GlyphElement_ind
+scheme 2497:2508 <> GlyphElement_rec
+scheme 2497:2508 <> GlyphElement_sind
+def 2673:2685 <> valid_element
+R2692:2703 Rongorongo <> GlyphElement ind
+binder 2688:2688 <> e:7
+R2708:2711 Coq.Init.Datatypes <> bool ind
+R2724:2724 Rongorongo <> e:7 var
+R2735:2740 Rongorongo <> Single constr
+R2747:2759 Rongorongo <> valid_barthel def
+R2767:2774 Rongorongo <> Ligature constr
+R2801:2804 Coq.Init.Datatypes <> ::bool_scope:x_'&&'_x not
+R2785:2797 Rongorongo <> valid_barthel def
+R2805:2817 Rongorongo <> valid_barthel def
+def 2884:2894 <> base_glyphs
+R2901:2912 Rongorongo <> GlyphElement ind
+binder 2897:2897 <> e:9
+R2917:2920 Coq.Init.Datatypes <> list ind
+R2922:2933 Rongorongo <> BarthelGlyph rec
+R2946:2946 Rongorongo <> e:9 var
+R2957:2962 Rongorongo <> Single constr
+R2969:2969 Coq.Lists.List ListNotations ::list_scope:'['_x_']' not
+R2971:2971 Coq.Lists.List ListNotations ::list_scope:'['_x_']' not
+R2977:2984 Rongorongo <> Ligature constr
+R2995:2995 Coq.Lists.List ListNotations ::list_scope:'['_x_';'_x_';'_'..'_';'_x_']' not
+R2998:2999 Coq.Lists.List ListNotations ::list_scope:'['_x_';'_x_';'_'..'_';'_x_']' not
+R3002:3002 Coq.Lists.List ListNotations ::list_scope:'['_x_';'_x_';'_'..'_';'_x_']' not
+def 3060:3069 <> core_count
+R3076:3087 Rongorongo <> GlyphElement ind
+binder 3072:3072 <> e:11
+R3092:3094 Coq.Init.Datatypes <> nat ind
+R3101:3106 Coq.Init.Datatypes <> length def
+R3109:3114 Coq.Lists.List <> filter def
+R3138:3148 Rongorongo <> base_glyphs def
+R3150:3150 Rongorongo <> e:11 var
+binder 3121:3121 <> g:12
+R3126:3132 Rongorongo <> is_core proj
+R3134:3134 Rongorongo <> g:12 var
+ind 3272:3282 <> Orientation
+constr 3287:3292 <> Normal
+constr 3296:3303 <> Inverted
+scheme 3272:3282 <> Orientation_rect
+scheme 3272:3282 <> Orientation_ind
+scheme 3272:3282 <> Orientation_rec
+scheme 3272:3282 <> Orientation_sind
+def 3342:3357 <> flip_orientation
+R3364:3374 Rongorongo <> Orientation ind
+binder 3360:3360 <> o:15
+R3379:3389 Rongorongo <> Orientation ind
+R3402:3402 Rongorongo <> o:15 var
+R3413:3418 Rongorongo <> Normal constr
+R3423:3430 Rongorongo <> Inverted constr
+R3436:3443 Rongorongo <> Inverted constr
+R3448:3453 Rongorongo <> Normal constr
+rec 3515:3524 <> TabletLine
+proj 3540:3547 <> line_num
+proj 3558:3568 <> orientation
+proj 3587:3592 <> glyphs
+R3551:3553 Coq.Init.Datatypes <> nat ind
+R3572:3582 Rongorongo <> Orientation ind
+R3596:3599 Coq.Init.Datatypes <> list ind
+R3601:3612 Rongorongo <> GlyphElement ind
+ind 3666:3669 <> Side
+constr 3674:3678 <> Recto
+constr 3682:3686 <> Verso
+scheme 3666:3669 <> Side_rect
+scheme 3666:3669 <> Side_ind
+scheme 3666:3669 <> Side_rec
+scheme 3666:3669 <> Side_sind
+rec 3729:3736 <> Position
+proj 3751:3758 <> pos_side
+proj 3770:3777 <> pos_line
+proj 3788:3794 <> pos_col
+R3762:3765 Rongorongo <> Side ind
+R3781:3783 Coq.Init.Datatypes <> nat ind
+R3798:3800 Coq.Init.Datatypes <> nat ind
+rec 3853:3858 <> Tablet
+proj 3876:3886 <> tablet_name
+proj 3953:3963 <> recto_lines
+proj 3986:3996 <> verso_lines
+R3890:3892 Coq.Init.Datatypes <> nat ind
+R3967:3970 Coq.Init.Datatypes <> list ind
+R3972:3981 Rongorongo <> TabletLine rec
+R4000:4003 Coq.Init.Datatypes <> list ind
+R4005:4014 Rongorongo <> TabletLine rec
+def 4101:4116 <> line_orientation
+R4123:4125 Coq.Init.Datatypes <> nat ind
+binder 4119:4119 <> n:31
+R4130:4140 Rongorongo <> Orientation ind
+R4153:4153 Rongorongo <> n:31 var
+R4164:4164 Coq.Init.Datatypes <> O constr
+R4169:4174 Rongorongo <> Normal constr
+R4180:4180 Coq.Init.Datatypes <> S constr
+R4188:4203 Rongorongo <> flip_orientation def
+R4206:4221 Rongorongo <> line_orientation:32 def
+def 4383:4398 <> well_formed_line
+R4405:4414 Rongorongo <> TabletLine rec
+binder 4401:4401 <> l:34
+R4419:4422 Coq.Init.Datatypes <> bool ind
+R4450:4465 Rongorongo <> line_orientation def
+R4468:4475 Rongorongo <> line_num proj
+R4477:4477 Rongorongo <> l:34 var
+R4435:4445 Rongorongo <> orientation proj
+R4447:4447 Rongorongo <> l:34 var
+R4489:4494 Rongorongo <> Normal constr
+R4497:4502 Rongorongo <> Normal constr
+R4507:4510 Coq.Init.Datatypes <> true constr
+R4516:4523 Rongorongo <> Inverted constr
+R4526:4533 Rongorongo <> Inverted constr
+R4538:4541 Coq.Init.Datatypes <> true constr
+R4555:4559 Coq.Init.Datatypes <> false constr
+def 4609:4625 <> valid_line_glyphs
+R4632:4641 Rongorongo <> TabletLine rec
+binder 4628:4628 <> l:35
+R4646:4649 Coq.Init.Datatypes <> bool ind
+R4656:4662 Coq.Lists.List <> forallb def
+R4679:4684 Rongorongo <> glyphs proj
+R4686:4686 Rongorongo <> l:35 var
+R4664:4676 Rongorongo <> valid_element def
+def 4702:4719 <> well_formed_tablet
+R4726:4731 Rongorongo <> Tablet rec
+binder 4722:4722 <> t:36
+R4736:4739 Coq.Init.Datatypes <> bool ind
+R4786:4791 Coq.Init.Datatypes <> ::bool_scope:x_'&&'_x not
+R4746:4752 Coq.Lists.List <> forallb def
+R4772:4782 Rongorongo <> recto_lines proj
+R4784:4784 Rongorongo <> t:36 var
+R4754:4769 Rongorongo <> well_formed_line def
+R4792:4798 Coq.Lists.List <> forallb def
+R4818:4828 Rongorongo <> verso_lines proj
+R4830:4830 Rongorongo <> t:36 var
+R4800:4815 Rongorongo <> well_formed_line def
+def 4882:4893 <> valid_tablet
+R4900:4905 Rongorongo <> Tablet rec
+binder 4896:4896 <> t:37
+R4910:4913 Coq.Init.Datatypes <> bool ind
+R4987:4992 Coq.Init.Datatypes <> ::bool_scope:x_'&&'_x not
+R4940:4945 Coq.Init.Datatypes <> ::bool_scope:x_'&&'_x not
+R4920:4937 Rongorongo <> well_formed_tablet def
+R4939:4939 Rongorongo <> t:37 var
+R4946:4952 Coq.Lists.List <> forallb def
+R4973:4983 Rongorongo <> recto_lines proj
+R4985:4985 Rongorongo <> t:37 var
+R4954:4970 Rongorongo <> valid_line_glyphs def
+R4993:4999 Coq.Lists.List <> forallb def
+R5020:5030 Rongorongo <> verso_lines proj
+R5032:5032 Rongorongo <> t:37 var
+R5001:5017 Rongorongo <> valid_line_glyphs def
+def 5119:5127 <> linearize
+R5134:5139 Rongorongo <> Tablet rec
+binder 5130:5130 <> t:38
+R5144:5147 Coq.Init.Datatypes <> list ind
+R5149:5160 Rongorongo <> GlyphElement ind
+R5198:5201 Coq.Init.Datatypes <> ::list_scope:x_'++'_x not
+R5167:5174 Coq.Lists.List <> flat_map def
+R5184:5194 Rongorongo <> recto_lines proj
+R5196:5196 Rongorongo <> t:38 var
+R5176:5181 Rongorongo <> glyphs proj
+R5202:5209 Coq.Lists.List <> flat_map def
+R5219:5229 Rongorongo <> verso_lines proj
+R5231:5231 Rongorongo <> t:38 var
+R5211:5216 Rongorongo <> glyphs proj
+def 5272:5282 <> glyph_count
+R5289:5294 Rongorongo <> Tablet rec
+binder 5285:5285 <> t:39
+R5299:5301 Coq.Init.Datatypes <> nat ind
+R5308:5313 Coq.Init.Datatypes <> length def
+R5316:5324 Rongorongo <> linearize def
+R5326:5326 Rongorongo <> t:39 var
+def 5402:5416 <> base_sign_count
+R5423:5428 Rongorongo <> Tablet rec
+binder 5419:5419 <> t:40
+R5433:5435 Coq.Init.Datatypes <> nat ind
+R5442:5447 Coq.Init.Datatypes <> length def
+R5450:5457 Coq.Lists.List <> flat_map def
+R5472:5480 Rongorongo <> linearize def
+R5482:5482 Rongorongo <> t:40 var
+R5459:5469 Rongorongo <> base_glyphs def
+def 5666:5679 <> section_marker
+R5683:5694 Rongorongo <> GlyphElement ind
+R5701:5708 Rongorongo <> Ligature constr
+R5711:5717 Rongorongo <> mkGlyph constr
+R5723:5727 Coq.Init.Datatypes <> false constr
+R5731:5737 Rongorongo <> mkGlyph constr
+R5741:5744 Coq.Init.Datatypes <> true constr
+def 5760:5776 <> is_section_marker
+R5783:5794 Rongorongo <> GlyphElement ind
+binder 5779:5779 <> g:41
+R5799:5802 Coq.Init.Datatypes <> bool ind
+R5815:5815 Rongorongo <> g:41 var
+R5826:5833 Rongorongo <> Ligature constr
+R5844:5844 Coq.Init.Datatypes <> ::bool_scope:x_'&&'_x not
+R5863:5868 Coq.Init.Datatypes <> ::bool_scope:x_'&&'_x not
+R5885:5885 Coq.Init.Datatypes <> ::bool_scope:x_'&&'_x not
+R5856:5859 Coq.Arith.PeanoNat <> ::nat_scope:x_'=?'_x not
+R5845:5852 Rongorongo <> glyph_id proj
+R5880:5883 Coq.Arith.PeanoNat <> ::nat_scope:x_'=?'_x not
+R5869:5876 Rongorongo <> glyph_id proj
+R5896:5900 Coq.Init.Datatypes <> false constr
+def 5970:5983 <> count_sections
+R5991:5994 Coq.Init.Datatypes <> list ind
+R5996:6007 Rongorongo <> GlyphElement ind
+binder 5986:5987 <> gs:43
+R6012:6014 Coq.Init.Datatypes <> nat ind
+R6021:6026 Coq.Init.Datatypes <> length def
+R6029:6034 Coq.Lists.List <> filter def
+R6054:6055 Rongorongo <> gs:43 var
+R6036:6052 Rongorongo <> is_section_marker def
+def 6118:6133 <> split_at_markers
+R6141:6144 Coq.Init.Datatypes <> list ind
+R6146:6157 Rongorongo <> GlyphElement ind
+binder 6136:6137 <> gs:44
+R6162:6165 Coq.Init.Datatypes <> list ind
+R6168:6171 Coq.Init.Datatypes <> list ind
+R6173:6184 Rongorongo <> GlyphElement ind
+R6198:6199 Rongorongo <> gs:44 var
+R6210:6211 Coq.Lists.List ListNotations ::list_scope:'['_']' not
+R6216:6216 Coq.Lists.List ListNotations ::list_scope:'['_x_']' not
+R6219:6219 Coq.Lists.List ListNotations ::list_scope:'['_x_']' not
+R6217:6218 Coq.Lists.List ListNotations ::list_scope:'['_']' not
+R6226:6229 Coq.Init.Datatypes <> ::list_scope:x_'::'_x not
+R6247:6263 Rongorongo <> is_section_marker def
+R6333:6348 Rongorongo <> split_at_markers:45 def
+R6370:6371 Coq.Lists.List ListNotations ::list_scope:'['_']' not
+R6376:6376 Coq.Lists.List ListNotations ::list_scope:'['_x_']' not
+R6380:6380 Coq.Lists.List ListNotations ::list_scope:'['_x_']' not
+R6377:6377 Coq.Lists.List ListNotations ::list_scope:'['_x_']' not
+R6379:6379 Coq.Lists.List ListNotations ::list_scope:'['_x_']' not
+R6423:6426 Coq.Init.Datatypes <> ::list_scope:x_'::'_x not
+R6439:6439 Coq.Init.Datatypes <> ::list_scope:x_'::'_x not
+R6452:6456 Coq.Init.Datatypes <> ::list_scope:x_'::'_x not
+R6441:6444 Coq.Init.Datatypes <> ::list_scope:x_'::'_x not
+R6282:6285 Coq.Init.Datatypes <> ::list_scope:x_'::'_x not
+R6280:6281 Coq.Lists.List ListNotations ::list_scope:'['_']' not
+R6286:6301 Rongorongo <> split_at_markers:45 def
+def 6561:6571 <> sections_of
+R6578:6583 Rongorongo <> Tablet rec
+binder 6574:6574 <> t:47
+R6588:6591 Coq.Init.Datatypes <> list ind
+R6594:6597 Coq.Init.Datatypes <> list ind
+R6599:6610 Rongorongo <> GlyphElement ind
+R6618:6633 Rongorongo <> split_at_markers def
+R6636:6644 Rongorongo <> linearize def
+R6646:6646 Rongorongo <> t:47 var
+prf 6737:6759 <> section_marker_relation
+binder 6770:6771 <> gs:48
+R6804:6806 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R6776:6781 Coq.Init.Datatypes <> length def
+R6784:6799 Rongorongo <> split_at_markers def
+R6801:6802 Rongorongo <> gs:48 var
+R6807:6807 Coq.Init.Datatypes <> S constr
+R6810:6823 Rongorongo <> count_sections def
+R6825:6826 Rongorongo <> gs:48 var
+R6908:6924 Rongorongo <> is_section_marker def
+R6908:6924 Rongorongo <> is_section_marker def
+R6956:6969 Rongorongo <> count_sections def
+R7041:7054 Rongorongo <> count_sections def
+R7103:7118 Rongorongo <> split_at_markers def
+R7103:7118 Rongorongo <> split_at_markers def
+def 7279:7294 <> flatten_sections
+R7304:7307 Coq.Init.Datatypes <> list ind
+R7310:7313 Coq.Init.Datatypes <> list ind
+R7315:7326 Rongorongo <> GlyphElement ind
+binder 7297:7300 <> secs:49
+R7332:7335 Coq.Init.Datatypes <> list ind
+R7337:7348 Rongorongo <> GlyphElement ind
+R7355:7362 Coq.Lists.List <> flat_map def
+R7377:7380 Rongorongo <> secs:49 var
+binder 7369:7369 <> s:50
+R7374:7374 Rongorongo <> s:50 var
+def 7554:7571 <> lunar_month_nights
+R7575:7577 Coq.Init.Datatypes <> nat ind
+def 7597:7608 <> lunar_phases
+R7612:7614 Coq.Init.Datatypes <> nat ind
+rec 7696:7706 <> PhaseMarker
+proj 7723:7731 <> phase_num
+proj 7758:7768 <> night_count
+R7735:7737 Coq.Init.Datatypes <> nat ind
+R7772:7774 Coq.Init.Datatypes <> nat ind
+def 7868:7878 <> valid_phase
+R7885:7895 Rongorongo <> PhaseMarker rec
+binder 7881:7881 <> p:54
+R7900:7903 Coq.Init.Datatypes <> bool ind
+R7910:7910 Coq.Init.Datatypes <> ::bool_scope:x_'&&'_x not
+R7928:7933 Coq.Init.Datatypes <> ::bool_scope:x_'&&'_x not
+R7962:7962 Coq.Init.Datatypes <> ::bool_scope:x_'&&'_x not
+R7912:7916 Coq.Arith.PeanoNat <> ::nat_scope:x_'<=?'_x not
+R7917:7925 Rongorongo <> phase_num proj
+R7927:7927 Rongorongo <> p:54 var
+R7945:7949 Coq.Arith.PeanoNat <> ::nat_scope:x_'<=?'_x not
+R7934:7942 Rongorongo <> phase_num proj
+R7944:7944 Rongorongo <> p:54 var
+R7950:7961 Rongorongo <> lunar_phases def
+rec 8006:8018 <> LunarCalendar
+proj 8038:8043 <> phases
+R8047:8050 Coq.Init.Datatypes <> list ind
+R8052:8062 Rongorongo <> PhaseMarker rec
+def 8131:8144 <> valid_calendar
+R8151:8163 Rongorongo <> LunarCalendar rec
+binder 8147:8147 <> c:57
+R8168:8171 Coq.Init.Datatypes <> bool ind
+R8300:8305 Coq.Init.Datatypes <> ::bool_scope:x_'&&'_x not
+R8178:8178 Coq.Init.Datatypes <> ::bool_scope:x_'&&'_x not
+R8212:8219 Coq.Init.Datatypes <> ::bool_scope:x_'&&'_x not
+R8299:8299 Coq.Init.Datatypes <> ::bool_scope:x_'&&'_x not
+R8196:8199 Coq.Arith.PeanoNat <> ::nat_scope:x_'=?'_x not
+R8179:8184 Coq.Init.Datatypes <> length def
+R8187:8192 Rongorongo <> phases proj
+R8194:8194 Rongorongo <> c:57 var
+R8200:8211 Rongorongo <> lunar_phases def
+R8277:8280 Coq.Arith.PeanoNat <> ::nat_scope:x_'=?'_x not
+R8220:8228 Coq.Lists.List <> fold_left def
+R8266:8271 Rongorongo <> phases proj
+R8273:8273 Rongorongo <> c:57 var
+binder 8235:8237 <> acc:58
+binder 8239:8239 <> p:59
+R8247:8249 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
+R8244:8246 Rongorongo <> acc:58 var
+R8250:8260 Rongorongo <> night_count proj
+R8262:8262 Rongorongo <> p:59 var
+R8281:8298 Rongorongo <> lunar_month_nights def
+R8306:8312 Coq.Lists.List <> forallb def
+R8327:8332 Rongorongo <> phases proj
+R8334:8334 Rongorongo <> c:57 var
+R8314:8324 Rongorongo <> valid_phase def
+def 8415:8427 <> moon_glyph_id
+R8431:8433 Coq.Init.Datatypes <> nat ind
+def 8475:8487 <> fish_glyph_id
+R8491:8493 Coq.Init.Datatypes <> nat ind
+def 8536:8548 <> is_moon_glyph
+R8555:8566 Rongorongo <> GlyphElement ind
+binder 8551:8551 <> e:60
+R8571:8574 Coq.Init.Datatypes <> bool ind
+R8587:8587 Rongorongo <> e:60 var
+R8598:8603 Rongorongo <> Single constr
+R8620:8623 Coq.Arith.PeanoNat <> ::nat_scope:x_'=?'_x not
+R8610:8617 Rongorongo <> glyph_id proj
+R8624:8636 Rongorongo <> moon_glyph_id def
+R8642:8649 Rongorongo <> Ligature constr
+R8670:8673 Coq.Arith.PeanoNat <> ::nat_scope:x_'=?'_x not
+R8659:8666 Rongorongo <> glyph_id proj
+R8674:8686 Rongorongo <> moon_glyph_id def
+def 8748:8766 <> count_phase_markers
+R8774:8777 Coq.Init.Datatypes <> list ind
+R8779:8790 Rongorongo <> GlyphElement ind
+binder 8769:8770 <> gs:62
+R8795:8797 Coq.Init.Datatypes <> nat ind
+R8804:8809 Coq.Init.Datatypes <> length def
+R8812:8817 Coq.Lists.List <> filter def
+R8833:8834 Rongorongo <> gs:62 var
+R8819:8831 Rongorongo <> is_moon_glyph def
+def 8933:8954 <> has_calendar_structure
+R8962:8965 Coq.Init.Datatypes <> list ind
+R8967:8978 Rongorongo <> GlyphElement ind
+binder 8957:8958 <> gs:63
+R8983:8986 Coq.Init.Datatypes <> bool ind
+R8993:8993 Coq.Init.Datatypes <> ::bool_scope:x_'&&'_x not
+R9032:9039 Coq.Init.Datatypes <> ::bool_scope:x_'&&'_x not
+R9072:9072 Coq.Init.Datatypes <> ::bool_scope:x_'&&'_x not
+R9016:9019 Coq.Arith.PeanoNat <> ::nat_scope:x_'=?'_x not
+R8994:9012 Rongorongo <> count_phase_markers def
+R9014:9015 Rongorongo <> gs:63 var
+R9020:9031 Rongorongo <> lunar_phases def
+R9058:9062 Coq.Arith.PeanoNat <> ::nat_scope:x_'<=?'_x not
+R9040:9057 Rongorongo <> lunar_month_nights def
+R9063:9068 Coq.Init.Datatypes <> length def
+R9070:9071 Rongorongo <> gs:63 var
+def 9137:9152 <> extract_calendar
+R9160:9163 Coq.Init.Datatypes <> list ind
+R9165:9176 Rongorongo <> GlyphElement ind
+binder 9155:9156 <> gs:64
+R9181:9186 Coq.Init.Datatypes <> option ind
+R9188:9200 Rongorongo <> LunarCalendar rec
+R9210:9231 Rongorongo <> has_calendar_structure def
+R9233:9234 Rongorongo <> gs:64 var
+R9427:9430 Coq.Init.Datatypes <> None constr
+R9293:9296 Coq.Init.Datatypes <> Some constr
+R9299:9308 Rongorongo <> mkCalendar constr
+R9311:9313 Coq.Lists.List <> map def
+R9398:9400 Coq.Lists.List <> seq def
+R9404:9415 Rongorongo <> lunar_phases def
+binder 9320:9320 <> n:65
+R9325:9331 Rongorongo <> mkPhase constr
+R9333:9333 Rongorongo <> n:65 var
+R9354:9356 Coq.Arith.PeanoNat <> ::nat_scope:x_'/'_x not
+R9336:9353 Rongorongo <> lunar_month_nights def
+R9357:9368 Rongorongo <> lunar_phases def
+prf 9486:9509 <> extract_preserves_nights
+binder 9520:9521 <> gs:66
+binder 9523:9523 <> c:67
+R9556:9561 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R9547:9549 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R9528:9543 Rongorongo <> extract_calendar def
+R9545:9546 Rongorongo <> gs:66 var
+R9550:9553 Coq.Init.Datatypes <> Some constr
+R9555:9555 Rongorongo <> c:67 var
+R9619:9623 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R9562:9570 Coq.Lists.List <> fold_left def
+R9608:9613 Rongorongo <> phases proj
+R9615:9615 Rongorongo <> c:67 var
+binder 9577:9579 <> acc:68
+binder 9581:9581 <> p:69
+R9589:9591 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
+R9586:9588 Rongorongo <> acc:68 var
+R9592:9602 Rongorongo <> night_count proj
+R9604:9604 Rongorongo <> p:69 var
+R9636:9639 Coq.Init.Peano <> ::nat_scope:x_'*'_x not
+R9673:9673 Coq.Init.Peano <> ::nat_scope:x_'*'_x not
+R9624:9635 Rongorongo <> lunar_phases def
+R9658:9660 Coq.Arith.PeanoNat <> ::nat_scope:x_'/'_x not
+R9640:9657 Rongorongo <> lunar_month_nights def
+R9661:9672 Rongorongo <> lunar_phases def
+R9709:9724 Rongorongo <> extract_calendar def
+R9744:9765 Rongorongo <> has_calendar_structure def
+R9744:9765 Rongorongo <> has_calendar_structure def
+def 10150:10163 <> chief_glyph_id
+R10167:10169 Coq.Init.Datatypes <> nat ind
+def 10190:10206 <> patronym_glyph_id
+R10210:10212 Coq.Init.Datatypes <> nat ind
+def 10233:10247 <> is_chief_marker
+R10254:10265 Rongorongo <> GlyphElement ind
+binder 10250:10250 <> e:70
+R10270:10273 Coq.Init.Datatypes <> bool ind
+R10286:10286 Rongorongo <> e:70 var
+R10297:10302 Rongorongo <> Single constr
+R10319:10322 Coq.Arith.PeanoNat <> ::nat_scope:x_'=?'_x not
+R10309:10316 Rongorongo <> glyph_id proj
+R10323:10336 Rongorongo <> chief_glyph_id def
+R10342:10349 Rongorongo <> Ligature constr
+R10370:10373 Coq.Arith.PeanoNat <> ::nat_scope:x_'=?'_x not
+R10359:10366 Rongorongo <> glyph_id proj
+R10374:10387 Rongorongo <> chief_glyph_id def
+def 10408:10425 <> is_patronym_marker
+R10432:10443 Rongorongo <> GlyphElement ind
+binder 10428:10428 <> e:72
+R10448:10451 Coq.Init.Datatypes <> bool ind
+R10464:10464 Rongorongo <> e:72 var
+R10475:10480 Rongorongo <> Single constr
+R10497:10500 Coq.Arith.PeanoNat <> ::nat_scope:x_'=?'_x not
+R10487:10494 Rongorongo <> glyph_id proj
+R10501:10517 Rongorongo <> patronym_glyph_id def
+R10523:10530 Rongorongo <> Ligature constr
+R10551:10554 Coq.Arith.PeanoNat <> ::nat_scope:x_'=?'_x not
+R10540:10547 Rongorongo <> glyph_id proj
+R10555:10571 Rongorongo <> patronym_glyph_id def
+def 10626:10637 <> count_chiefs
+R10645:10648 Coq.Init.Datatypes <> list ind
+R10650:10661 Rongorongo <> GlyphElement ind
+binder 10640:10641 <> gs:74
+R10666:10668 Coq.Init.Datatypes <> nat ind
+R10675:10680 Coq.Init.Datatypes <> length def
+R10683:10688 Coq.Lists.List <> filter def
+R10706:10707 Rongorongo <> gs:74 var
+R10690:10704 Rongorongo <> is_chief_marker def
+def 10723:10737 <> count_patronyms
+R10745:10748 Coq.Init.Datatypes <> list ind
+R10750:10761 Rongorongo <> GlyphElement ind
+binder 10740:10741 <> gs:75
+R10766:10768 Coq.Init.Datatypes <> nat ind
+R10775:10780 Coq.Init.Datatypes <> length def
+R10783:10788 Coq.Lists.List <> filter def
+R10809:10810 Rongorongo <> gs:75 var
+R10790:10807 Rongorongo <> is_patronym_marker def
+def 10892:10914 <> has_genealogy_structure
+R10922:10925 Coq.Init.Datatypes <> list ind
+R10927:10938 Rongorongo <> GlyphElement ind
+binder 10917:10918 <> gs:76
+R10943:10946 Coq.Init.Datatypes <> bool ind
+R10967:10978 Rongorongo <> count_chiefs def
+R10980:10981 Rongorongo <> gs:76 var
+binder 10957:10962 <> chiefs:77
+R11000:11014 Rongorongo <> count_patronyms def
+R11016:11017 Rongorongo <> gs:76 var
+binder 10992:10995 <> pats:78
+R11131:11135 Coq.Init.Datatypes <> ::bool_scope:x_'||'_x not
+R11152:11152 Coq.Init.Datatypes <> ::bool_scope:x_'||'_x not
+R11093:11093 Coq.Init.Datatypes <> ::bool_scope:x_'||'_x not
+R11108:11113 Coq.Init.Datatypes <> ::bool_scope:x_'||'_x not
+R11130:11130 Coq.Init.Datatypes <> ::bool_scope:x_'||'_x not
+R11100:11103 Coq.Arith.PeanoNat <> ::nat_scope:x_'=?'_x not
+R11094:11099 Rongorongo <> chiefs:77 var
+R11104:11107 Rongorongo <> pats:78 var
+R11122:11125 Coq.Arith.PeanoNat <> ::nat_scope:x_'=?'_x not
+R11114:11114 Coq.Init.Datatypes <> S constr
+R11116:11121 Rongorongo <> chiefs:77 var
+R11126:11129 Rongorongo <> pats:78 var
+R11142:11145 Coq.Arith.PeanoNat <> ::nat_scope:x_'=?'_x not
+R11136:11141 Rongorongo <> chiefs:77 var
+R11146:11146 Coq.Init.Datatypes <> S constr
+R11148:11151 Rongorongo <> pats:78 var
+def 11221:11240 <> staff_patronym_count
+R11244:11246 Coq.Init.Datatypes <> nat ind
+def 11324:11338 <> tablet_G_chiefs
+R11342:11344 Coq.Init.Datatypes <> nat ind
+def 11472:11479 <> glyph_eq
+R11490:11501 Rongorongo <> BarthelGlyph rec
+binder 11482:11483 <> g1:79
+binder 11485:11486 <> g2:80
+R11506:11509 Coq.Init.Datatypes <> bool ind
+R11527:11530 Coq.Arith.PeanoNat <> ::nat_scope:x_'=?'_x not
+R11516:11523 Rongorongo <> glyph_id proj
+R11525:11526 Rongorongo <> g1:79 var
+R11531:11538 Rongorongo <> glyph_id proj
+R11540:11541 Rongorongo <> g2:80 var
+def 11556:11565 <> element_eq
+R11576:11587 Rongorongo <> GlyphElement ind
+binder 11568:11569 <> e1:81
+binder 11571:11572 <> e2:82
+R11592:11595 Coq.Init.Datatypes <> bool ind
+R11612:11613 Rongorongo <> e2:82 var
+R11608:11609 Rongorongo <> e1:81 var
+R11624:11629 Rongorongo <> Single constr
+R11635:11640 Rongorongo <> Single constr
+R11648:11655 Rongorongo <> glyph_eq def
+R11667:11674 Rongorongo <> Ligature constr
+R11683:11690 Rongorongo <> Ligature constr
+R11715:11718 Coq.Init.Datatypes <> ::bool_scope:x_'&&'_x not
+R11701:11708 Rongorongo <> glyph_eq def
+R11719:11726 Rongorongo <> glyph_eq def
+R11746:11750 Coq.Init.Datatypes <> false constr
+def 11820:11833 <> is_subsequence
+R11844:11847 Coq.Init.Datatypes <> list ind
+R11849:11860 Rongorongo <> GlyphElement ind
+binder 11836:11837 <> s1:85
+binder 11839:11840 <> s2:86
+R11865:11868 Coq.Init.Datatypes <> bool ind
+R11885:11886 Rongorongo <> s2:86 var
+R11881:11882 Rongorongo <> s1:85 var
+R11897:11898 Coq.Lists.List ListNotations ::list_scope:'['_']' not
+R11906:11909 Coq.Init.Datatypes <> true constr
+R11918:11919 Coq.Lists.List ListNotations ::list_scope:'['_']' not
+R11924:11928 Coq.Init.Datatypes <> false constr
+R11935:11938 Coq.Init.Datatypes <> ::list_scope:x_'::'_x not
+R11944:11947 Coq.Init.Datatypes <> ::list_scope:x_'::'_x not
+R11963:11972 Rongorongo <> element_eq def
+R12015:12028 Rongorongo <> is_subsequence:87 def
+R12030:12031 Rongorongo <> s1:85 var
+R11983:11996 Rongorongo <> is_subsequence:87 def
+def 12113:12126 <> shares_passage
+R12137:12142 Rongorongo <> Tablet rec
+binder 12129:12130 <> t1:90
+binder 12132:12133 <> t2:91
+R12156:12159 Coq.Init.Datatypes <> list ind
+R12161:12172 Rongorongo <> GlyphElement ind
+binder 12146:12152 <> passage:92
+R12177:12180 Coq.Init.Datatypes <> bool ind
+R12224:12229 Coq.Init.Datatypes <> ::bool_scope:x_'&&'_x not
+R12187:12200 Rongorongo <> is_subsequence def
+R12202:12208 Rongorongo <> passage:92 var
+R12211:12219 Rongorongo <> linearize def
+R12221:12222 Rongorongo <> t1:90 var
+R12230:12243 Rongorongo <> is_subsequence def
+R12245:12251 Rongorongo <> passage:92 var
+R12254:12262 Rongorongo <> linearize def
+R12264:12265 Rongorongo <> t2:91 var
+prf 12409:12417 <> flip_flip
+binder 12428:12428 <> o:93
+R12468:12470 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R12431:12446 Rongorongo <> flip_orientation def
+R12449:12464 Rongorongo <> flip_orientation def
+R12466:12466 Rongorongo <> o:93 var
+R12471:12471 Rongorongo <> o:93 var
+prf 12567:12588 <> orientation_alternates
+binder 12599:12599 <> n:94
+R12626:12628 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R12604:12619 Rongorongo <> line_orientation def
+R12622:12622 Coq.Init.Datatypes <> S constr
+R12624:12624 Rongorongo <> n:94 var
+R12629:12644 Rongorongo <> flip_orientation def
+R12647:12662 Rongorongo <> line_orientation def
+R12664:12664 Rongorongo <> n:94 var
+prf 12785:12800 <> even_line_normal
+binder 12811:12811 <> n:95
+R12833:12836 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R12826:12828 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R12816:12823 Coq.Arith.PeanoNat Nat even def
+R12825:12825 Rongorongo <> n:95 var
+R12829:12832 Coq.Init.Datatypes <> true constr
+R12855:12857 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R12837:12852 Rongorongo <> line_orientation def
+R12854:12854 Rongorongo <> n:95 var
+R12858:12863 Rongorongo <> Normal constr
+R12894:12915 Coq.Init.Wf <> well_founded_induction thm
+R12917:12921 Coq.Arith.Wf_nat <> lt_wf thm
+R12894:12915 Coq.Init.Wf <> well_founded_induction thm
+R12917:12921 Coq.Arith.Wf_nat <> lt_wf thm
+prf 13133:13149 <> odd_line_inverted
+binder 13160:13160 <> n:96
+R13181:13184 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R13174:13176 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R13165:13171 Coq.Arith.PeanoNat Nat odd def
+R13173:13173 Rongorongo <> n:96 var
+R13177:13180 Coq.Init.Datatypes <> true constr
+R13203:13205 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R13185:13200 Rongorongo <> line_orientation def
+R13202:13202 Rongorongo <> n:96 var
+R13206:13213 Rongorongo <> Inverted constr
+R13244:13265 Coq.Init.Wf <> well_founded_induction thm
+R13267:13271 Coq.Arith.Wf_nat <> lt_wf thm
+R13244:13265 Coq.Init.Wf <> well_founded_induction thm
+R13267:13271 Coq.Arith.Wf_nat <> lt_wf thm
+prf 13522:13537 <> linearize_length
+binder 13548:13548 <> t:97
+R13566:13568 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R13553:13563 Rongorongo <> glyph_count def
+R13565:13565 Rongorongo <> t:97 var
+R13609:13629 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
+R13569:13574 Coq.Init.Datatypes <> length def
+R13577:13584 Coq.Lists.List <> flat_map def
+R13594:13604 Rongorongo <> recto_lines proj
+R13606:13606 Rongorongo <> t:97 var
+R13586:13591 Rongorongo <> glyphs proj
+R13630:13635 Coq.Init.Datatypes <> length def
+R13638:13645 Coq.Lists.List <> flat_map def
+R13655:13665 Rongorongo <> verso_lines proj
+R13667:13667 Rongorongo <> t:97 var
+R13647:13652 Rongorongo <> glyphs proj
+R13698:13708 Rongorongo <> glyph_count def
+R13711:13719 Rongorongo <> linearize def
+R13732:13741 Coq.Lists.List <> app_length thm
+R13732:13741 Coq.Lists.List <> app_length thm
+R13732:13741 Coq.Lists.List <> app_length thm
+prf 13803:13824 <> empty_tablet_no_glyphs
+binder 13835:13835 <> n:98
+R13870:13872 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R13840:13850 Rongorongo <> glyph_count def
+R13853:13860 Rongorongo <> mkTablet constr
+R13862:13862 Rongorongo <> n:98 var
+R13864:13865 Coq.Lists.List ListNotations ::list_scope:'['_']' not
+R13867:13868 Coq.Lists.List ListNotations ::list_scope:'['_']' not
+prf 13970:13989 <> recto_only_linearize
+binder 14000:14000 <> n:99
+binder 14002:14003 <> rs:100
+R14036:14038 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R14008:14016 Rongorongo <> linearize def
+R14019:14026 Rongorongo <> mkTablet constr
+R14028:14028 Rongorongo <> n:99 var
+R14030:14031 Rongorongo <> rs:100 var
+R14033:14034 Coq.Lists.List ListNotations ::list_scope:'['_']' not
+R14039:14046 Coq.Lists.List <> flat_map def
+R14055:14056 Rongorongo <> rs:100 var
+R14048:14053 Rongorongo <> glyphs proj
+R14088:14096 Rongorongo <> linearize def
+R14116:14124 Coq.Lists.List <> app_nil_r thm
+R14116:14124 Coq.Lists.List <> app_nil_r thm
+R14116:14124 Coq.Lists.List <> app_nil_r thm
+prf 14189:14203 <> element_eq_refl
+binder 14214:14214 <> e:101
+R14231:14233 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R14217:14226 Rongorongo <> element_eq def
+R14228:14228 Rongorongo <> e:101 var
+R14230:14230 Rongorongo <> e:101 var
+R14234:14237 Coq.Init.Datatypes <> true constr
+R14276:14285 Rongorongo <> element_eq def
+R14288:14295 Rongorongo <> glyph_eq def
+R14307:14318 Coq.Arith.PeanoNat Nat eqb_refl thm
+R14307:14318 Coq.Arith.PeanoNat Nat eqb_refl thm
+R14307:14318 Coq.Arith.PeanoNat Nat eqb_refl thm
+R14307:14318 Coq.Arith.PeanoNat Nat eqb_refl thm
+R14307:14318 Coq.Arith.PeanoNat Nat eqb_refl thm
+R14307:14318 Coq.Arith.PeanoNat Nat eqb_refl thm
+R14307:14318 Coq.Arith.PeanoNat Nat eqb_refl thm
+R14307:14318 Coq.Arith.PeanoNat Nat eqb_refl thm
+prf 14378:14393 <> subsequence_refl
+binder 14404:14405 <> gs:102
+R14428:14430 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R14408:14421 Rongorongo <> is_subsequence def
+R14423:14424 Rongorongo <> gs:102 var
+R14426:14427 Rongorongo <> gs:102 var
+R14431:14434 Coq.Init.Datatypes <> true constr
+R14513:14527 Rongorongo <> element_eq_refl thm
+R14513:14527 Rongorongo <> element_eq_refl thm
+R14513:14527 Rongorongo <> element_eq_refl thm
+prf 14604:14613 <> subseq_aux
+binder 14624:14624 <> n:103
+R14672:14672 Coq.Init.Logic <> ::type_scope:x_'/\'_x not
+R14788:14839 Coq.Init.Logic <> ::type_scope:x_'/\'_x not
+R14951:14951 Coq.Init.Logic <> ::type_scope:x_'/\'_x not
+binder 14680:14681 <> s1:104
+binder 14683:14684 <> s2:105
+binder 14686:14686 <> x:106
+R14715:14722 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R14710:14713 Coq.Init.Peano <> ::nat_scope:x_'<='_x not
+R14698:14700 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
+R14689:14694 Coq.Init.Datatypes <> length def
+R14696:14697 Rongorongo <> s1:104 var
+R14701:14706 Coq.Init.Datatypes <> length def
+R14708:14709 Rongorongo <> s2:105 var
+R14714:14714 Rongorongo <> n:103 var
+R14750:14753 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R14743:14745 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R14723:14736 Rongorongo <> is_subsequence def
+R14738:14739 Rongorongo <> s1:104 var
+R14741:14742 Rongorongo <> s2:105 var
+R14746:14749 Coq.Init.Datatypes <> true constr
+R14781:14783 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R14754:14767 Rongorongo <> is_subsequence def
+R14769:14770 Rongorongo <> s1:104 var
+R14774:14777 Coq.Init.Datatypes <> ::list_scope:x_'::'_x not
+R14773:14773 Rongorongo <> x:106 var
+R14778:14779 Rongorongo <> s2:105 var
+R14784:14787 Coq.Init.Datatypes <> true constr
+binder 14847:14847 <> x:107
+binder 14849:14850 <> xs:108
+binder 14852:14852 <> s:109
+R14880:14887 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R14875:14878 Coq.Init.Peano <> ::nat_scope:x_'<='_x not
+R14864:14866 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
+R14855:14860 Coq.Init.Datatypes <> length def
+R14862:14863 Rongorongo <> xs:108 var
+R14867:14872 Coq.Init.Datatypes <> length def
+R14874:14874 Rongorongo <> s:109 var
+R14879:14879 Rongorongo <> n:103 var
+R14921:14924 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R14914:14916 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R14888:14901 Rongorongo <> is_subsequence def
+R14905:14908 Coq.Init.Datatypes <> ::list_scope:x_'::'_x not
+R14904:14904 Rongorongo <> x:107 var
+R14909:14910 Rongorongo <> xs:108 var
+R14913:14913 Rongorongo <> s:109 var
+R14917:14920 Coq.Init.Datatypes <> true constr
+R14944:14946 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R14925:14938 Rongorongo <> is_subsequence def
+R14940:14941 Rongorongo <> xs:108 var
+R14943:14943 Rongorongo <> s:109 var
+R14947:14950 Coq.Init.Datatypes <> true constr
+R15526:15535 Rongorongo <> element_eq def
+R15526:15535 Rongorongo <> element_eq def
+R15569:15578 Rongorongo <> element_eq def
+R15569:15578 Rongorongo <> element_eq def
+R15800:15809 Rongorongo <> element_eq def
+R15800:15809 Rongorongo <> element_eq def
+R16008:16017 Rongorongo <> element_eq def
+R16008:16017 Rongorongo <> element_eq def
+prf 16203:16220 <> subsequence_weaken
+binder 16231:16232 <> s1:110
+binder 16234:16235 <> s2:111
+binder 16237:16237 <> x:112
+R16269:16274 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R16262:16264 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R16242:16255 Rongorongo <> is_subsequence def
+R16257:16258 Rongorongo <> s1:110 var
+R16260:16261 Rongorongo <> s2:111 var
+R16265:16268 Coq.Init.Datatypes <> true constr
+R16302:16304 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R16275:16288 Rongorongo <> is_subsequence def
+R16290:16291 Rongorongo <> s1:110 var
+R16295:16298 Coq.Init.Datatypes <> ::list_scope:x_'::'_x not
+R16294:16294 Rongorongo <> x:112 var
+R16299:16300 Rongorongo <> s2:111 var
+R16305:16308 Coq.Init.Datatypes <> true constr
+R16350:16359 Rongorongo <> subseq_aux thm
+R16371:16373 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
+R16362:16367 Coq.Init.Datatypes <> length def
+R16374:16379 Coq.Init.Datatypes <> length def
+R16350:16359 Rongorongo <> subseq_aux thm
+R16371:16373 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
+R16362:16367 Coq.Init.Datatypes <> length def
+R16374:16379 Coq.Init.Datatypes <> length def
+prf 16441:16461 <> subsequence_drop_head
+binder 16472:16472 <> x:113
+binder 16474:16475 <> xs:114
+binder 16477:16477 <> s:115
+R16515:16520 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R16508:16510 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R16482:16495 Rongorongo <> is_subsequence def
+R16499:16502 Coq.Init.Datatypes <> ::list_scope:x_'::'_x not
+R16498:16498 Rongorongo <> x:113 var
+R16503:16504 Rongorongo <> xs:114 var
+R16507:16507 Rongorongo <> s:115 var
+R16511:16514 Coq.Init.Datatypes <> true constr
+R16540:16542 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R16521:16534 Rongorongo <> is_subsequence def
+R16536:16537 Rongorongo <> xs:114 var
+R16539:16539 Rongorongo <> s:115 var
+R16543:16546 Coq.Init.Datatypes <> true constr
+R16587:16596 Rongorongo <> subseq_aux thm
+R16608:16610 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
+R16599:16604 Coq.Init.Datatypes <> length def
+R16611:16616 Coq.Init.Datatypes <> length def
+R16587:16596 Rongorongo <> subseq_aux thm
+R16608:16610 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
+R16599:16604 Coq.Init.Datatypes <> length def
+R16611:16616 Coq.Init.Datatypes <> length def
+prf 16724:16740 <> subsequence_trans
+binder 16751:16752 <> s1:116
+binder 16754:16755 <> s2:117
+binder 16757:16758 <> s3:118
+R16790:16795 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R16783:16785 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R16763:16776 Rongorongo <> is_subsequence def
+R16778:16779 Rongorongo <> s1:116 var
+R16781:16782 Rongorongo <> s2:117 var
+R16786:16789 Coq.Init.Datatypes <> true constr
+R16823:16828 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R16816:16818 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R16796:16809 Rongorongo <> is_subsequence def
+R16811:16812 Rongorongo <> s2:117 var
+R16814:16815 Rongorongo <> s3:118 var
+R16819:16822 Coq.Init.Datatypes <> true constr
+R16849:16851 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R16829:16842 Rongorongo <> is_subsequence def
+R16844:16845 Rongorongo <> s1:116 var
+R16847:16848 Rongorongo <> s3:118 var
+R16852:16855 Coq.Init.Datatypes <> true constr
+R17279:17288 Rongorongo <> element_eq def
+R17318:17327 Rongorongo <> element_eq def
+R17357:17366 Rongorongo <> element_eq def
+R17279:17288 Rongorongo <> element_eq def
+R17318:17327 Rongorongo <> element_eq def
+R17318:17327 Rongorongo <> element_eq def
+R17357:17366 Rongorongo <> element_eq def
+R17357:17366 Rongorongo <> element_eq def
+R17357:17366 Rongorongo <> element_eq def
+R17357:17366 Rongorongo <> element_eq def
+R17533:17553 Rongorongo <> subsequence_drop_head thm
+R17533:17553 Rongorongo <> subsequence_drop_head thm
+R17647:17667 Rongorongo <> subsequence_drop_head thm
+R17647:17667 Rongorongo <> subsequence_drop_head thm
+R17774:17794 Rongorongo <> subsequence_drop_head thm
+R17774:17794 Rongorongo <> subsequence_drop_head thm
+R17834:17854 Rongorongo <> subsequence_drop_head thm
+R17834:17854 Rongorongo <> subsequence_drop_head thm
+R17970:17979 Rongorongo <> element_eq def
+R17982:17989 Rongorongo <> glyph_eq def
+R18065:18074 Coq.Arith.PeanoNat Nat eqb_eq thm
+R18065:18074 Coq.Arith.PeanoNat Nat eqb_eq thm
+R18090:18099 Coq.Arith.PeanoNat Nat eqb_eq thm
+R18090:18099 Coq.Arith.PeanoNat Nat eqb_eq thm
+R18123:18133 Coq.Arith.PeanoNat Nat eqb_neq thm
+R18123:18133 Coq.Arith.PeanoNat Nat eqb_neq thm
+R18164:18176 Coq.Bool.Bool <> andb_true_iff thm
+R18164:18176 Coq.Bool.Bool <> andb_true_iff thm
+R18164:18176 Coq.Bool.Bool <> andb_true_iff thm
+R18207:18220 Coq.Bool.Bool <> andb_false_iff thm
+R18207:18220 Coq.Bool.Bool <> andb_false_iff thm
+R18207:18220 Coq.Bool.Bool <> andb_false_iff thm
+R18310:18319 Coq.Arith.PeanoNat Nat eqb_eq thm
+R18310:18319 Coq.Arith.PeanoNat Nat eqb_eq thm
+R18336:18345 Coq.Arith.PeanoNat Nat eqb_eq thm
+R18336:18345 Coq.Arith.PeanoNat Nat eqb_eq thm
+R18370:18379 Coq.Arith.PeanoNat Nat eqb_eq thm
+R18370:18379 Coq.Arith.PeanoNat Nat eqb_eq thm
+R18396:18405 Coq.Arith.PeanoNat Nat eqb_eq thm
+R18396:18405 Coq.Arith.PeanoNat Nat eqb_eq thm
+R18499:18509 Coq.Arith.PeanoNat Nat eqb_neq thm
+R18471:18481 Coq.Arith.PeanoNat Nat eqb_neq thm
+R18471:18481 Coq.Arith.PeanoNat Nat eqb_neq thm
+R18499:18509 Coq.Arith.PeanoNat Nat eqb_neq thm
+R18577:18580 Coq.Init.Datatypes <> ::list_scope:x_'::'_x not
+R18577:18580 Coq.Init.Datatypes <> ::list_scope:x_'::'_x not
+R18766:18769 Coq.Init.Datatypes <> ::list_scope:x_'::'_x not
+R18766:18769 Coq.Init.Datatypes <> ::list_scope:x_'::'_x not
+R18787:18804 Rongorongo <> subsequence_weaken thm
+R18787:18804 Rongorongo <> subsequence_weaken thm
+prf 18880:18897 <> shares_passage_sym
+binder 18908:18909 <> t1:119
+binder 18911:18912 <> t2:120
+binder 18914:18914 <> p:121
+R18941:18943 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R18919:18932 Rongorongo <> shares_passage def
+R18934:18935 Rongorongo <> t1:119 var
+R18937:18938 Rongorongo <> t2:120 var
+R18940:18940 Rongorongo <> p:121 var
+R18944:18957 Rongorongo <> shares_passage def
+R18959:18960 Rongorongo <> t2:120 var
+R18962:18963 Rongorongo <> t1:119 var
+R18965:18965 Rongorongo <> p:121 var
+R19000:19013 Rongorongo <> shares_passage def
+R19026:19034 Coq.Bool.Bool <> andb_comm thm
+R19026:19034 Coq.Bool.Bool <> andb_comm thm
+R19026:19034 Coq.Bool.Bool <> andb_comm thm
+def 19146:19156 <> tablet_A_id
+R19160:19162 Coq.Init.Datatypes <> nat ind
+def 19215:19225 <> tablet_B_id
+R19229:19231 Coq.Init.Datatypes <> nat ind
+def 19292:19302 <> tablet_C_id
+R19306:19308 Coq.Init.Datatypes <> nat ind
+def 19367:19377 <> tablet_I_id
+R19381:19383 Coq.Init.Datatypes <> nat ind
+def 19446:19456 <> tablet_G_id
+R19460:19462 Coq.Init.Datatypes <> nat ind
+def 19550:19569 <> total_corpus_tablets
+R19573:19575 Coq.Init.Datatypes <> nat ind
+def 19595:19612 <> barthel_core_signs
+R19616:19618 Coq.Init.Datatypes <> nat ind
+def 19639:19657 <> barthel_total_signs
+R19661:19663 Coq.Init.Datatypes <> nat ind
+def 19711:19722 <> tahua_glyphs
+R19726:19728 Coq.Init.Datatypes <> nat ind
+def 19750:19761 <> aruku_glyphs
+R19765:19767 Coq.Init.Datatypes <> nat ind
+def 19789:19800 <> staff_glyphs
+R19804:19806 Coq.Init.Datatypes <> nat ind
+def 19870:19886 <> tablet_G_sections
+R19890:19892 Coq.Init.Datatypes <> nat ind
+def 19959:19973 <> staff_patronyms
+R19977:19979 Coq.Init.Datatypes <> nat ind
+prf 20060:20081 <> tablet_G_segment_count
+R20108:20110 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R20104:20106 Coq.Init.Peano <> ::nat_scope:x_'+'_x not
+R20087:20103 Rongorongo <> tablet_G_sections def
+prf 20201:20223 <> mamari_phase_constraint
+R20241:20243 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R20229:20240 Rongorongo <> lunar_phases def
+prf 20324:20342 <> barthel_range_valid
+binder 20353:20353 <> g:122
+R20380:20386 Coq.Init.Logic <> ::type_scope:x_'<->'_x not
+R20373:20375 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R20358:20370 Rongorongo <> valid_barthel def
+R20372:20372 Rongorongo <> g:122 var
+R20376:20379 Coq.Init.Datatypes <> true constr
+R20402:20405 Coq.Init.Logic <> ::type_scope:x_'/\'_x not
+R20388:20391 Coq.Init.Peano <> ::nat_scope:x_'<='_x not
+R20392:20399 Rongorongo <> glyph_id proj
+R20401:20401 Rongorongo <> g:122 var
+R20416:20419 Coq.Init.Peano <> ::nat_scope:x_'<='_x not
+R20406:20413 Rongorongo <> glyph_id proj
+R20415:20415 Rongorongo <> g:122 var
+R20420:20438 Rongorongo <> barthel_total_signs def
+R20467:20479 Rongorongo <> valid_barthel def
+R20482:20500 Rongorongo <> barthel_total_signs def
+R20513:20525 Coq.Bool.Bool <> andb_true_iff thm
+R20529:20538 Coq.Arith.PeanoNat Nat leb_le thm
+R20513:20525 Coq.Bool.Bool <> andb_true_iff thm
+R20513:20525 Coq.Bool.Bool <> andb_true_iff thm
+R20529:20538 Coq.Arith.PeanoNat Nat leb_le thm
+R20529:20538 Coq.Arith.PeanoNat Nat leb_le thm
+R20529:20538 Coq.Arith.PeanoNat Nat leb_le thm
+R20529:20538 Coq.Arith.PeanoNat Nat leb_le thm
+prf 20599:20617 <> tablet_linearizable
+binder 20628:20628 <> t:123
+R20633:20639 Coq.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R20642:20643 Coq.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+binder 20640:20641 <> gs:124
+R20655:20657 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R20644:20652 Rongorongo <> linearize def
+R20654:20654 Rongorongo <> t:123 var
+R20658:20659 Rongorongo <> gs:124 var
+R20689:20697 Rongorongo <> linearize def
+R20689:20697 Rongorongo <> linearize def
+prf 20774:20791 <> sections_partition
+binder 20802:20803 <> gs:125
+R20836:20838 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R20808:20813 Coq.Init.Datatypes <> length def
+R20816:20831 Rongorongo <> split_at_markers def
+R20833:20834 Rongorongo <> gs:125 var
+R20839:20839 Coq.Init.Datatypes <> S constr
+R20842:20855 Rongorongo <> count_sections def
+R20857:20858 Rongorongo <> gs:125 var
+R20877:20899 Rongorongo <> section_marker_relation thm
+R20877:20899 Rongorongo <> section_marker_relation thm
+prf 20987:21008 <> tablet_segment_formula
+binder 21019:21019 <> t:126
+R21046:21048 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R21024:21029 Coq.Init.Datatypes <> length def
+R21032:21042 Rongorongo <> sections_of def
+R21044:21044 Rongorongo <> t:126 var
+R21049:21049 Coq.Init.Datatypes <> S constr
+R21052:21065 Rongorongo <> count_sections def
+R21068:21076 Rongorongo <> linearize def
+R21078:21078 Rongorongo <> t:126 var
+R21109:21119 Rongorongo <> sections_of def
+R21128:21150 Rongorongo <> section_marker_relation thm
+R21128:21150 Rongorongo <> section_marker_relation thm

@@ -20,6 +20,12 @@
 (*                                                                            *)
 (******************************************************************************)
 
+(* TODO:
+   [ ] Add traversal bijection (position successor)
+   [ ] Encode actual Tablet G data with real Barthel IDs
+   [ ] Add genealogy alternating pattern verification
+*)
+
 Require Import Coq.Arith.Arith.
 Require Import Coq.Lists.List.
 Require Import Coq.Bool.Bool.
