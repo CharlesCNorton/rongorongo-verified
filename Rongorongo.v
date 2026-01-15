@@ -3,22 +3,40 @@
 (*                    Rongorongo Script Structural Properties                 *)
 (*                                                                            *)
 (*     Formalization of the undeciphered Rapa Nui script: reverse             *)
-(*     boustrophedon reading direction (bottom-left start, 180° rotation      *)
-(*     per line), Barthel glyph catalog (001–600, ~120 core signs),           *)
+(*     boustrophedon reading direction (bottom-left start, 180 degree         *)
+(*     rotation per line), Barthel glyph catalog (001-600, ~120 core signs),  *)
 (*     ligature composition rules, section-marker recurrence (380.1.3),       *)
 (*     and Mamari lunar calendar structure (~28-night cycle). Proves          *)
 (*     reading-order determinism and parallel-text alignment decidability.    *)
 (*                                                                            *)
-(*     "If Rongorongo predates the arrival of external travelers, it          *)
-(*      could represent another, and the latest, invention of writing         *)
-(*      in human history."                                                    *)
-(*     — Ferrara et al., Scientific Reports, 2024                             *)
+(*     Ferrara et al., Scientific Reports, 2024: If Rongorongo predates the   *)
+(*     arrival of external travelers, it could represent another, and the     *)
+(*     latest, invention of writing in human history.                         *)
 (*                                                                            *)
 (*     Author: Charles C. Norton                                              *)
 (*     Date: January 14, 2026                                                 *)
 (*     License: MIT                                                           *)
 (*                                                                            *)
 (******************************************************************************)
+
+(** * Cure List
+
+    1. Fix comment terminator warnings by escaping embedded quotes in header
+    2. Reconcile Pozdniakov 52-glyph core with Barthel 120-sign inventory
+    3. Correct bird_class variant range to match actual Barthel distribution
+    4. Revise classify_glyph series boundaries to reflect Barthel catalog
+    5. Expand allograph classes to comprehensive corpus-derived equivalences
+    6. Derive ligature composition rules from systematic corpus analysis
+    7. Encode complete 26-tablet inventory with accurate metadata
+    8. Add full transcription for Tablet A (Tahua)
+    9. Add full transcription for Tablet B (Aruku Kurenga)
+    10. Add full transcription for Tablet C (Mamari) beyond Ca6-Ca7 fragments
+    11. Add full transcription for Tablet G (Small Santiago) beyond Gv6
+    12. Add full transcription for Tablet I (Santiago Staff)
+    13. Add transcriptions for remaining corpus tablets
+    14. Demonstrate shares_passage on actual parallel texts between tablets
+    15. Prove alignment decidability over real corpus data
+*)
 
 (** * Cure Sequence (Gaps to Address)
 
