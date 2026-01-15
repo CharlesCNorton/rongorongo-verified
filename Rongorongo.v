@@ -26,7 +26,7 @@
     3. [DONE] Correct bird_class variant range to match actual Barthel distribution
     4. [DONE] Revise classify_glyph series boundaries to reflect Barthel catalog
     5. [DONE] Expand allograph classes to comprehensive corpus-derived equivalences
-    6. Derive ligature composition rules from systematic corpus analysis
+    6. [DONE] Derive ligature composition rules from systematic corpus analysis
     7. Encode complete 26-tablet inventory with accurate metadata
     8. Add full transcription for Tablet A (Tahua)
     9. Add full transcription for Tablet B (Aruku Kurenga)
@@ -407,19 +407,35 @@ Definition valid_ligature_length (gs : list BarthelGlyph) : bool :=
 
 (** * Ligature Composition Constraints
 
-    Not all glyph combinations form valid ligatures. Based on Barthel 1958:
-    - Human figures (200-series) often serve as base glyphs
-    - Bird glyphs (600-series) commonly attach to humans
-    - Geometric glyphs attach at specific positions
-    - Some glyphs never combine (standalone markers like 76)
+    Corpus-derived ligature rules based on parallel passage analysis:
+
+    Base glyph patterns (from Fischer 1997, Horley 2007, 2021):
+    - Human figures (200-series) are the most common ligature bases
+    - Glyph 200 holding an object: object replaces head OR hand
+    - Animal figures reduce to distinctive features when fusing
+    - Birds (600-series) can be base OR attachment
+    - Fish (700-series) serve as bases in marine sequences
+
+    Attachment patterns documented in parallel texts:
+    - Objects (1, 8, 9) fuse into human figures at head/hand position
+    - Geometric shapes attach as superscript or subscript
+    - Birds attach to humans (esp. on head: birdman motif)
+    - Reduction: (200.)25.226/326 > 171 (Horley 2007)
+
+    Special cases:
+    - Glyph 200 as taxogram: can be omitted in parallel passages
+    - Glyph 76 (patronymic): never forms ligatures, always standalone
+    - Glyph 1 (delimiter): reduces when attached to preceding glyph
 
     Position types in ligatures:
     - Base: the primary glyph (usually largest, human or animal)
+    - Head: replaces or attaches at head position
+    - Hand: replaces or attaches at hand position
     - Superscript: attached above the base
     - Subscript: attached below the base
     - Suffix: attached to the right *)
 
-Inductive LigaturePosition := BasePos | SuperPos | SubPos | SuffixPos.
+Inductive LigaturePosition := BasePos | HeadPos | HandPos | SuperPos | SubPos | SuffixPos.
 
 (** Glyph series classification for composition rules.
 
@@ -477,10 +493,40 @@ Definition can_attach (id : nat) : bool :=
   | _ => false
   end.
 
-(** Standalone glyphs that never form ligatures *)
+(** Standalone glyphs that never form ligatures.
+    Based on corpus analysis: only glyph 76 is truly standalone.
+    Note: Glyph 1 CAN reduce and attach (Horley 2007), despite
+    often appearing standalone as a delimiter. *)
 Definition is_standalone (id : nat) : bool :=
-  (id =? 76) ||   (* patronymic marker *)
-  (id =? 1).      (* counter/delimiter glyph *)
+  id =? 76.  (* patronymic marker - never ligates *)
+
+(** Glyphs that commonly reduce when forming ligatures.
+    These glyphs lose detail or shrink when attached to a base. *)
+Definition is_reducible (id : nat) : bool :=
+  (id =? 1) ||    (* delimiter reduces *)
+  (id =? 200) ||  (* human figure can reduce to head/arm *)
+  (id =? 600).    (* bird can reduce to head *)
+
+(** Check valid attachment at head position.
+    Objects 1, 8, 9 documented as replacing heads in parallel texts. *)
+Definition can_attach_at_head (id : nat) : bool :=
+  (id =? 1) || (id =? 8) || (id =? 9) ||
+  match classify_glyph id with
+  | BirdSeries => true    (* birds on heads = birdman motif *)
+  | GeomSeries => true    (* small geometric attachments *)
+  | _ => false
+  end.
+
+(** Check valid attachment at hand position.
+    Objects commonly held by human figures. *)
+Definition can_attach_at_hand (id : nat) : bool :=
+  (id =? 1) || (id =? 8) || (id =? 9) ||  (* documented in parallel texts *)
+  match classify_glyph id with
+  | GeomSeries => true
+  | ObjectSeries => true  (* implements held in hand *)
+  | MixedSeries => true
+  | _ => false
+  end.
 
 (** Check if a ligature has valid composition *)
 Definition valid_ligature_composition (gs : list BarthelGlyph) : bool :=
@@ -496,6 +542,11 @@ Definition valid_ligature (gs : list BarthelGlyph) : bool :=
   valid_ligature_length gs &&
   forallb valid_barthel gs &&
   valid_ligature_composition gs.
+
+(** Documented ligature reductions from Horley 2007.
+    Pattern: expanded form > reduced form *)
+Definition known_reduction_171 : list nat := [200; 25; 226].  (* reduces to 171 *)
+Definition known_reduction_670 : list nat := [630; 678].      (* fuses to 670 *)
 
 (** Element validity extends to compounds; Unknown/Uncertain are always valid *)
 Definition valid_element (e : GlyphElement) : bool :=
