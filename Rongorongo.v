@@ -21,21 +21,12 @@
 
 (** * Cure List
 
-    1. [DONE] Fix comment terminator warnings by escaping embedded quotes in header
-    2. [DONE] Reconcile Pozdniakov 52-glyph core with Barthel 120-sign inventory
-    3. [DONE] Correct bird_class variant range to match actual Barthel distribution
-    4. [DONE] Revise classify_glyph series boundaries to reflect Barthel catalog
-    5. [DONE] Expand allograph classes to comprehensive corpus-derived equivalences
-    6. [DONE] Derive ligature composition rules from systematic corpus analysis
-    7. [DONE] Encode complete 26-tablet inventory with accurate metadata
-    8. [PARTIAL] Add full transcription for Tablet A - sample Ab1 added
-    9. [DEFERRED] Add full transcription for Tablet B - requires corpus
-    10. [PARTIAL] Add full transcription for Tablet C - Ca6-Ca7 present
-    11. [PARTIAL] Add full transcription for Tablet G - Gv6 present
-    12. [PARTIAL] Add full transcription for Tablet I - sample added
-    13. [DEFERRED] Add transcriptions for remaining tablets - requires corpus
-    14. [DONE] Demonstrate shares_passage on actual parallel texts between tablets
-    15. [DONE] Prove alignment decidability over real corpus data
+    1. Add full transcription for Tablet A - sample Ab1 added, requires corpus
+    2. Add full transcription for Tablet B - requires corpus
+    3. Add full transcription for Tablet C - Ca6-Ca7 present, requires corpus
+    4. Add full transcription for Tablet G - Gv6 present, requires corpus
+    5. Add full transcription for Tablet I - sample added, requires corpus
+    6. Add transcriptions for remaining tablets - requires corpus
 *)
 
 (** * Cure Sequence (Gaps to Address)
