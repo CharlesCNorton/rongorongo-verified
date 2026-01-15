@@ -21,9 +21,14 @@
 (******************************************************************************)
 
 (* TODO:
+   [ ] Extend Ligature to support 3+ component glyphs
+   [ ] Correct moon glyph to 6-variants and fish glyph to 711 per Barthel
+   [ ] Fix calendar remainder handling (28 mod 8 = 4 extra nights distributed)
    [ ] Add traversal bijection (position successor)
    [ ] Encode actual Tablet G data with real Barthel IDs
-   [ ] Add genealogy alternating pattern verification
+   [ ] Encode Mamari Ca6-Ca9 calendar sequence with real Barthel IDs
+   [ ] Add genealogy alternating pattern verification (A-76-B-76-C positional)
+   [ ] Add literature citations for glyph ID assignments
 *)
 
 Require Import Coq.Arith.Arith.
@@ -48,20 +53,24 @@ Definition valid_barthel (g : BarthelGlyph) : bool :=
 (** Ligature: compound of two or more glyphs *)
 Inductive GlyphElement :=
   | Single : BarthelGlyph -> GlyphElement
-  | Ligature : BarthelGlyph -> BarthelGlyph -> GlyphElement.
+  | Ligature : list BarthelGlyph -> GlyphElement.  (* length >= 2 for valid ligature *)
+
+(** Ligature validity: must have at least 2 components *)
+Definition valid_ligature_length (gs : list BarthelGlyph) : bool :=
+  2 <=? length gs.
 
 (** Element validity extends to compounds *)
 Definition valid_element (e : GlyphElement) : bool :=
   match e with
   | Single g => valid_barthel g
-  | Ligature g1 g2 => valid_barthel g1 && valid_barthel g2
+  | Ligature gs => valid_ligature_length gs && forallb valid_barthel gs
   end.
 
 (** Extract base glyphs from an element *)
 Definition base_glyphs (e : GlyphElement) : list BarthelGlyph :=
   match e with
   | Single g => [g]
-  | Ligature g1 g2 => [g1; g2]
+  | Ligature gs => gs
   end.
 
 (** Core sign count in an element *)
@@ -151,11 +160,11 @@ Definition base_sign_count (t : Tablet) : nat :=
 (** The 380.1.3 compound glyph serves as a section/paragraph marker.
     It appears on multiple tablets (G, K, A, C, E, S) dividing text. *)
 Definition section_marker : GlyphElement :=
-  Ligature (mkGlyph 380 false) (mkGlyph 1 true).
+  Ligature [mkGlyph 380 false; mkGlyph 1 true].
 
-Definition is_section_marker (g : GlyphElement) : bool :=
-  match g with
-  | Ligature g1 g2 => (glyph_id g1 =? 380) && (glyph_id g2 =? 1)
+Definition is_section_marker (e : GlyphElement) : bool :=
+  match e with
+  | Ligature (g1 :: g2 :: _) => (glyph_id g1 =? 380) && (glyph_id g2 =? 1)
   | _ => false
   end.
 
@@ -235,7 +244,8 @@ Definition fish_glyph_id : nat := 430.  (* Inverted fish *)
 Definition is_moon_glyph (e : GlyphElement) : bool :=
   match e with
   | Single g => glyph_id g =? moon_glyph_id
-  | Ligature g1 _ => glyph_id g1 =? moon_glyph_id
+  | Ligature (g1 :: _) => glyph_id g1 =? moon_glyph_id
+  | Ligature [] => false
   end.
 
 (** Count phase markers in a sequence *)
@@ -280,13 +290,17 @@ Definition patronym_glyph_id : nat := 76.
 Definition is_chief_marker (e : GlyphElement) : bool :=
   match e with
   | Single g => glyph_id g =? chief_glyph_id
-  | Ligature g1 _ => glyph_id g1 =? chief_glyph_id
+  | Ligature (g1 :: _) => glyph_id g1 =? chief_glyph_id
+  | Ligature [] => false
   end.
 
 Definition is_patronym_marker (e : GlyphElement) : bool :=
   match e with
   | Single g => glyph_id g =? patronym_glyph_id
-  | Ligature _ g2 => glyph_id g2 =? patronym_glyph_id
+  | Ligature gs => match rev gs with
+                   | g :: _ => glyph_id g =? patronym_glyph_id
+                   | [] => false
+                   end
   end.
 
 (** Count genealogical markers *)
@@ -315,10 +329,18 @@ Definition tablet_G_chiefs : nat := 31.  (* Same as section markers *)
 Definition glyph_eq (g1 g2 : BarthelGlyph) : bool :=
   glyph_id g1 =? glyph_id g2.
 
+(** List equality for glyphs *)
+Fixpoint glyph_list_eq (gs1 gs2 : list BarthelGlyph) : bool :=
+  match gs1, gs2 with
+  | [], [] => true
+  | g1 :: rest1, g2 :: rest2 => glyph_eq g1 g2 && glyph_list_eq rest1 rest2
+  | _, _ => false
+  end.
+
 Definition element_eq (e1 e2 : GlyphElement) : bool :=
   match e1, e2 with
   | Single g1, Single g2 => glyph_eq g1 g2
-  | Ligature a1 b1, Ligature a2 b2 => glyph_eq a1 a2 && glyph_eq b1 b2
+  | Ligature gs1, Ligature gs2 => glyph_list_eq gs1 gs2
   | _, _ => false
   end.
 
@@ -408,10 +430,55 @@ Proof.
   rewrite app_nil_r. reflexivity.
 Qed.
 
+(** Glyph equality is transitive *)
+Lemma glyph_eq_trans : forall g1 g2 g3,
+  glyph_eq g1 g2 = true -> glyph_eq g2 g3 = true -> glyph_eq g1 g3 = true.
+Proof.
+  intros g1 g2 g3 H12 H23. unfold glyph_eq in *.
+  apply Nat.eqb_eq in H12. apply Nat.eqb_eq in H23.
+  apply Nat.eqb_eq. lia.
+Qed.
+
+(** Glyph list equality is reflexive *)
+Lemma glyph_list_eq_refl : forall gs, glyph_list_eq gs gs = true.
+Proof.
+  induction gs as [| g rest IH].
+  - reflexivity.
+  - simpl. unfold glyph_eq. rewrite Nat.eqb_refl. simpl. exact IH.
+Qed.
+
+(** Glyph list equality is transitive *)
+Lemma glyph_list_eq_trans : forall gs1 gs2 gs3,
+  glyph_list_eq gs1 gs2 = true -> glyph_list_eq gs2 gs3 = true ->
+  glyph_list_eq gs1 gs3 = true.
+Proof.
+  induction gs1 as [| g1 rest1 IH]; intros gs2 gs3 H12 H23.
+  - destruct gs2; [destruct gs3; auto | discriminate].
+  - destruct gs2 as [| g2 rest2]; [discriminate|].
+    destruct gs3 as [| g3 rest3]; [simpl in H23; discriminate|].
+    simpl in *. rewrite andb_true_iff in H12, H23.
+    destruct H12 as [Hg12 Hr12]. destruct H23 as [Hg23 Hr23].
+    rewrite andb_true_iff. split.
+    + apply glyph_eq_trans with g2; assumption.
+    + apply IH with rest2; assumption.
+Qed.
+
 (** Element equality is reflexive *)
 Lemma element_eq_refl : forall e, element_eq e e = true.
 Proof.
-  intros [g | g1 g2]; unfold element_eq, glyph_eq; rewrite !Nat.eqb_refl; reflexivity.
+  intros [g | gs].
+  - unfold element_eq, glyph_eq. rewrite Nat.eqb_refl. reflexivity.
+  - unfold element_eq. apply glyph_list_eq_refl.
+Qed.
+
+(** Element equality is transitive *)
+Lemma element_eq_trans : forall e1 e2 e3,
+  element_eq e1 e2 = true -> element_eq e2 e3 = true -> element_eq e1 e3 = true.
+Proof.
+  intros [g1 | gs1] [g2 | gs2] [g3 | gs3] H12 H23; simpl in *;
+    try discriminate.
+  - apply glyph_eq_trans with g2; assumption.
+  - apply glyph_list_eq_trans with gs2; assumption.
 Qed.
 
 (** Subsequence is reflexive *)
@@ -510,17 +577,8 @@ Proof.
       apply subsequence_drop_head with (x := x). exact H12.
       apply subsequence_drop_head with (x := y). exact H23.
     + (* x≠z, x=y, y=z - contradiction: x=y, y=z implies x=z *)
-      exfalso. unfold element_eq, glyph_eq in *.
-      destruct x, y, z; simpl in *; try discriminate.
-      * apply Nat.eqb_eq in Exy. apply Nat.eqb_eq in Eyz.
-        apply Nat.eqb_neq in Exz. lia.
-      * rewrite andb_true_iff in Exy, Eyz.
-        rewrite andb_false_iff in Exz.
-        destruct Exy as [Exy1 Exy2]. destruct Eyz as [Eyz1 Eyz2].
-        apply Nat.eqb_eq in Exy1. apply Nat.eqb_eq in Exy2.
-        apply Nat.eqb_eq in Eyz1. apply Nat.eqb_eq in Eyz2.
-        destruct Exz as [Exz1 | Exz2];
-          apply Nat.eqb_neq in Exz1 + apply Nat.eqb_neq in Exz2; lia.
+      exfalso. pose proof (element_eq_trans x y z Exy Eyz) as Hxz.
+      rewrite Exz in Hxz. discriminate.
     + (* x≠z, x=y, y≠z *) apply IH with (s2 := y :: ys).
       simpl. rewrite Exy. exact H12. exact H23.
     + (* x≠z, x≠y, y=z *) apply IH with (s2 := ys). exact H12. exact H23.
