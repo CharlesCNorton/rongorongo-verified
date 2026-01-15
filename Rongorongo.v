@@ -23,7 +23,7 @@
 
     1. [DONE] Fix comment terminator warnings by escaping embedded quotes in header
     2. [DONE] Reconcile Pozdniakov 52-glyph core with Barthel 120-sign inventory
-    3. Correct bird_class variant range to match actual Barthel distribution
+    3. [DONE] Correct bird_class variant range to match actual Barthel distribution
     4. Revise classify_glyph series boundaries to reflect Barthel catalog
     5. Expand allograph classes to comprehensive corpus-derived equivalences
     6. Derive ligature composition rules from systematic corpus analysis
@@ -148,8 +148,15 @@ Record AllographClass := mkAlloClass {
 Definition moon_class : AllographClass :=
   mkAlloClass 6 [22; 23; 24; 25; 26; 27; 28; 29].
 
+(** Bird class: Barthel 600 (frigate bird) and attested variants.
+    Note: Barthel's system is NOT sequential. Bird variants include:
+    - 600: base frigate bird (manu tara)
+    - 620: sooty tern (manu tara variant, late period)
+    - 660: chicken (moa)
+    - 680-685: two-headed bird series
+    - 690: birdman (tangata manu) - bird body with human head *)
 Definition bird_class : AllographClass :=
-  mkAlloClass 600 [601; 602; 603; 604; 605; 606; 607; 608; 609; 610].
+  mkAlloClass 600 [620; 660; 680; 681; 682; 683; 684; 685; 690].
 
 Definition human_class : AllographClass :=
   mkAlloClass 200 [201; 202; 203; 204; 205; 206; 207; 208; 209; 210].
