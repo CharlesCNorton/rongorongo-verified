@@ -25,7 +25,7 @@
     2. [DONE] Reconcile Pozdniakov 52-glyph core with Barthel 120-sign inventory
     3. [DONE] Correct bird_class variant range to match actual Barthel distribution
     4. [DONE] Revise classify_glyph series boundaries to reflect Barthel catalog
-    5. Expand allograph classes to comprehensive corpus-derived equivalences
+    5. [DONE] Expand allograph classes to comprehensive corpus-derived equivalences
     6. Derive ligature composition rules from systematic corpus analysis
     7. Encode complete 26-tablet inventory with accurate metadata
     8. Add full transcription for Tablet A (Tahua)
@@ -144,9 +144,45 @@ Record AllographClass := mkAlloClass {
   variants : list nat        (* variant Barthel numbers mapping to base *)
 }.
 
-(** Known allograph classes based on Barthel 1958 and Pozdniakov 2007 *)
+(** * Comprehensive Allograph Classes
+
+    Allograph identification based on:
+    - Barthel 1958: original glyph catalog with variant suffixes
+    - Pozdniakov 1996: statistical allograph analysis
+    - Pozdniakov & Pozdniakov 2007: refined 52-glyph core
+    - Horley 2005: "Allographic Variations and Statistical Analysis"
+
+    Key principle: Parallel passages show which glyphs interchange
+    while preserving meaning, establishing allographic relationships. *)
+
+(** Hand class: Pozdniakov 1996 established 6 ↔ 64 as allographs.
+    Both represent raised/open hand shapes with different orientations.
+    These appear in parallel passages interchangeably. *)
+Definition hand_class : AllographClass :=
+  mkAlloClass 6 [64; 66; 69].
+
+(** Moon class: Moon phase variants used in Mamari calendar.
+    Base 6 (crescent) relates to waning variants 22-29.
+    Note: Glyph 6 serves double duty as hand AND moon crescent. *)
 Definition moon_class : AllographClass :=
   mkAlloClass 6 [22; 23; 24; 25; 26; 27; 28; 29].
+
+(** Human figure class: 200-series anthropomorphic glyphs.
+    - 200: base seated/standing human figure (ariki/chief)
+    - 204: human with hand-64 component
+    - 206: human with hand-6 component (allographic to 204)
+    - 210: human with arms raised
+    - 220: human holding object
+    - 240: birdman figure (transitional to bird series)
+    - 280: dancing/moving figure *)
+Definition human_class : AllographClass :=
+  mkAlloClass 200 [204; 206; 210; 220; 240; 280].
+
+(** Human-with-hand subclass: 204 ↔ 206 are allographs.
+    They differ only in whether hand component is 64 or 6.
+    Pozdniakov 1996: These interchange in parallel passages. *)
+Definition human_hand_class : AllographClass :=
+  mkAlloClass 204 [206].
 
 (** Bird class: Barthel 600 (frigate bird) and attested variants.
     Note: Barthel's system is NOT sequential. Bird variants include:
@@ -158,12 +194,43 @@ Definition moon_class : AllographClass :=
 Definition bird_class : AllographClass :=
   mkAlloClass 600 [620; 660; 680; 681; 682; 683; 684; 685; 690].
 
-Definition human_class : AllographClass :=
-  mkAlloClass 200 [201; 202; 203; 204; 205; 206; 207; 208; 209; 210].
+(** Fish class: Marine life glyphs.
+    - 700: generic fish base
+    - 711: fish delimiter (calendar phase marker)
+    - 730: bonito
+    - 760: shark *)
+Definition fish_class : AllographClass :=
+  mkAlloClass 700 [711; 730; 760].
 
-(** All defined allograph classes *)
+(** Geometric class: Basic shapes that may interchange.
+    - 1: delimiter/counter
+    - 3: chevron
+    - 10: cross
+    These are less established as allographs; included for completeness. *)
+Definition geom_class : AllographClass :=
+  mkAlloClass 1 [3; 10].
+
+(** Plant/object class: 300-series glyphs.
+    - 300: plant base
+    - 320: tree
+    Note: 380 (tangata rongorongo) is NOT included here as it is
+    a distinctive section marker, not an allograph of plants. *)
+Definition plant_class : AllographClass :=
+  mkAlloClass 300 [320].
+
+(** All defined allograph classes.
+    Order matters: more specific classes should come first
+    to take precedence in normalization. *)
 Definition allograph_classes : list AllographClass :=
-  [moon_class; bird_class; human_class].
+  [ human_hand_class;  (* 204 ↔ 206: most specific *)
+    hand_class;        (* 6 ↔ 64 *)
+    moon_class;        (* 6 ↔ 22-29 for calendar context *)
+    human_class;       (* 200 series *)
+    bird_class;        (* 600 series *)
+    fish_class;        (* 700 series *)
+    plant_class;       (* 300 series *)
+    geom_class         (* 1-99 geometric *)
+  ].
 
 (** Check if a glyph ID is a variant in a class *)
 Definition is_variant_in_class (id : nat) (c : AllographClass) : bool :=
