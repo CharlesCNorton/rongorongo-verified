@@ -24,7 +24,7 @@
     1. [DONE] Fix comment terminator warnings by escaping embedded quotes in header
     2. [DONE] Reconcile Pozdniakov 52-glyph core with Barthel 120-sign inventory
     3. [DONE] Correct bird_class variant range to match actual Barthel distribution
-    4. Revise classify_glyph series boundaries to reflect Barthel catalog
+    4. [DONE] Revise classify_glyph series boundaries to reflect Barthel catalog
     5. Expand allograph classes to comprehensive corpus-derived equivalences
     6. Derive ligature composition rules from systematic corpus analysis
     7. Encode complete 26-tablet inventory with accurate metadata
@@ -354,39 +354,59 @@ Definition valid_ligature_length (gs : list BarthelGlyph) : bool :=
 
 Inductive LigaturePosition := BasePos | SuperPos | SubPos | SuffixPos.
 
-(** Glyph series classification for composition rules *)
+(** Glyph series classification for composition rules.
+
+    Barthel 1958 catalog organization (see Grundlagen pp. 38-42):
+    - 001-099: Geometric shapes, abstract signs (core syllabary 1-84)
+    - 100-199: Extended geometric forms, variants
+    - 200-299: Human figures (tangata), often ligature bases
+    - 300-399: Objects, plants, and open-mouth head variants
+    - 400-499: Complex forms, bird-head variants, composite signs
+    - 500-599: Mixed forms, implements, body parts
+    - 600-699: Birds (manu), especially frigate bird (manu tara)
+    - 700-799: Fish and marine life (ika) *)
+
 Inductive GlyphSeries :=
+  | GeomSeries     (* 1-99: geometric shapes, core syllabary *)
+  | GeomExtSeries  (* 100-199: extended geometric forms *)
   | HumanSeries    (* 200-299: human figures *)
-  | BirdSeries     (* 600-699: birds, esp. frigatebird *)
-  | GeomSeries     (* 1-99: geometric shapes *)
-  | PlantSeries    (* 300-399: plants and objects *)
+  | ObjectSeries   (* 300-399: objects, plants, open-mouth heads *)
+  | CompositeSeries (* 400-499: complex forms, bird-head variants *)
+  | MixedSeries    (* 500-599: mixed forms, implements *)
+  | BirdSeries     (* 600-699: birds *)
   | FishSeries     (* 700-799: fish and marine life *)
-  | OtherSeries.   (* everything else *)
+  | OtherSeries.   (* 800+: rare forms, later additions *)
 
 (** Classify a glyph by its Barthel number *)
 Definition classify_glyph (id : nat) : GlyphSeries :=
   if (id <=? 99) then GeomSeries
-  else if (200 <=? id) && (id <=? 299) then HumanSeries
-  else if (300 <=? id) && (id <=? 399) then PlantSeries
-  else if (600 <=? id) && (id <=? 699) then BirdSeries
-  else if (700 <=? id) && (id <=? 799) then FishSeries
+  else if (id <=? 199) then GeomExtSeries
+  else if (id <=? 299) then HumanSeries
+  else if (id <=? 399) then ObjectSeries
+  else if (id <=? 499) then CompositeSeries
+  else if (id <=? 599) then MixedSeries
+  else if (id <=? 699) then BirdSeries
+  else if (id <=? 799) then FishSeries
   else OtherSeries.
 
 (** Check if glyph can serve as ligature base *)
 Definition can_be_base (id : nat) : bool :=
   match classify_glyph id with
-  | HumanSeries => true
-  | BirdSeries => true
-  | FishSeries => true
+  | HumanSeries => true      (* humans commonly serve as base *)
+  | BirdSeries => true       (* birds can be base *)
+  | FishSeries => true       (* fish can be base *)
+  | CompositeSeries => true  (* 400-series often are ligature bases *)
   | _ => false
   end.
 
 (** Check if glyph can attach to another glyph *)
 Definition can_attach (id : nat) : bool :=
   match classify_glyph id with
-  | GeomSeries => true
-  | PlantSeries => true
-  | BirdSeries => true  (* birds can also attach, esp. to humans *)
+  | GeomSeries => true       (* geometric signs commonly attach *)
+  | GeomExtSeries => true    (* extended geometric forms attach *)
+  | ObjectSeries => true     (* objects/plants attach *)
+  | BirdSeries => true       (* birds can also attach, esp. to humans *)
+  | MixedSeries => true      (* implements can attach *)
   | _ => false
   end.
 
