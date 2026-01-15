@@ -20,6 +20,23 @@
 (*                                                                            *)
 (******************************************************************************)
 
+(** * Cure Sequence (Gaps to Address)
+
+    1. Add citation for 380.1 section marker — locate Barthel reference
+    2. Verify staff patronym count (564) — locate primary source
+    3. Replace glyph 200 "chief" with documented B-K marker
+    4. Model allograph equivalence classes — glyph 6 variants map to single base sign
+    5. Add damaged/illegible glyph constructor — [Unknown] with position metadata
+    6. Add uncertainty wrapper for contested readings — [Uncertain : list GlyphElement -> GlyphElement]
+    7. Relax strict genealogy alternation — allow intervening glyphs between name-76 pairs
+    8. Formalize Guy's intercalation rule — conditional extra night before/after full moon
+    9. Replace arithmetic phase distribution with observational model — phases as variable-length intervals
+    10. Specify ligature composition constraints — which base signs combine, positional rules
+    11. Add tablet-specific anomaly flags — authenticity status, damage extent, provenance
+    12. Encode actual tablet data — start with Mamari Ca6-9 and Gv6 genealogy sequence
+    13. Add palaeographic metadata — carving depth, correction marks, scribal hand attribution
+*)
+
 (** * References
 
     [Barthel1958] Thomas Barthel. Grundlagen zur Entzifferung der
